@@ -3,120 +3,362 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>خدمات الأحوال الشخصية والتوثيق الشرعي</title>
+    <title>إرشادات ومقالات الأحوال الشخصية | مكتب الأستاذ شهاب محمد الشيمي</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Aref+Ruqaa:wght@400;700&family=Cairo:wght@400;600;700;800&display=swap" rel="stylesheet">
     <style>
-        * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Cairo', sans-serif; }
-        body { background-color: #121212; color: #ffffff; line-height: 1.8; }
-        header { background: linear-gradient(135deg, #000000, #1a1a1a); border-bottom: 2px solid #d4af37; padding: 40px 20px; text-align: center; }
-        header h1 { color: #d4af37; font-size: 2.2rem; margin-bottom: 10px; font-weight: 700; }
-        header p { color: #b3b3b3; font-size: 1.1rem; }
-        .container { max-width: 1100px; margin: 40px auto; padding: 0 20px; }
-        
-        /* القسم الجديد للروابط */
-        .quick-links { display: flex; flex-wrap: wrap; justify-content: center; gap: 10px; margin: 20px 0; }
-        .quick-link-btn { background-color: #333; color: #d4af37; padding: 8px 15px; border: 1px solid #d4af37; border-radius: 20px; text-decoration: none; font-size: 0.9rem; transition: 0.3s; }
-        .quick-link-btn:hover { background-color: #d4af37; color: #000; }
+        * { margin:0; padding:0; box-sizing:border-box; }
+        html,body { height:100%; }
+        body {
+            font-family:'Cairo', sans-serif;
+            background:#000;
+            color:#fff;
+            min-height:100vh;
+            position:relative;
+            overflow-x:hidden;
+            padding-bottom:110px;
+        }
 
-        .intro-box { background-color: #1e1e1e; border-right: 5px solid #d4af37; padding: 25px; border-radius: 4px; margin-bottom: 40px; box-shadow: 0 4px 15px rgba(0,0,0,0.5); }
-        .services-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 25px; margin-bottom: 40px; }
-        .service-card { background-color: #1e1e1e; border: 1px solid #333; border-radius: 8px; padding: 25px; transition: all 0.3s ease; box-shadow: 0 4px 10px rgba(0,0,0,0.3); }
-        .service-card h3 { color: #d4af37; font-size: 1.4rem; margin-bottom: 15px; border-bottom: 1px solid #333; padding-bottom: 10px; }
-        .service-card ul { list-style: none; padding-right: 5px; }
-        .service-card ul li { color: #cccccc; margin-bottom: 10px; position: relative; padding-right: 15px; }
-        .service-card ul li::before { content: "•"; color: #d4af37; font-weight: bold; position: absolute; right: 0; }
-        
-        .cta-section { background: linear-gradient(135deg, #1a1a1a, #000000); border: 1px solid #d4af37; border-radius: 8px; padding: 35px; text-align: center; margin-top: 50px; }
-        .btn-contact { display: inline-block; background-color: #d4af37; color: #000000; padding: 12px 35px; border-radius: 4px; text-decoration: none; font-weight: 600; margin-top: 20px; }
-        
-        .back-btn { display: inline-block; background-color: #333; color: #d4af37; padding: 10px 20px; border: 1px solid #d4af37; border-radius: 4px; text-decoration: none; font-weight: 600; margin-bottom: 20px; }
-        .back-btn:hover { background-color: #d4af37; color: #000; }
-        
-        footer { background-color: #0a0a0a; color: #777777; text-align: center; padding: 20px; margin-top: 60px; }
+        /* ===== Header ===== */
+        header {
+            padding:34px 20px 26px;
+            text-align:center;
+            background:linear-gradient(to bottom, rgba(20,17,10,1), rgba(0,0,0,1));
+            border-bottom:1px solid rgba(232,197,116,0.25);
+        }
+        .back-link {
+            display:inline-flex;
+            align-items:center;
+            gap:6px;
+            color:#e8c574;
+            text-decoration:none;
+            font-size:14px;
+            margin-bottom:18px;
+            opacity:0.85;
+        }
+        .back-link:hover { opacity:1; }
+        header h1 {
+            font-family:'Aref Ruqaa', serif;
+            font-size:2.1rem;
+            color:#e8c574;
+            margin-bottom:8px;
+        }
+        header p.sub {
+            font-size:14px;
+            color:#cbb98a;
+            max-width:520px;
+            margin:0 auto;
+            line-height:1.9;
+        }
+        .divider {
+            width:110px;
+            height:2px;
+            background:linear-gradient(to left, transparent, #e8c574, transparent);
+            margin:18px auto 0;
+        }
+
+        /* ===== Table of contents ===== */
+        nav.toc {
+            max-width:640px;
+            margin:26px auto 0;
+            padding:0 20px;
+            display:flex;
+            flex-wrap:wrap;
+            gap:10px;
+            justify-content:center;
+        }
+        nav.toc a {
+            font-size:13px;
+            color:#e8c574;
+            border:1px solid rgba(232,197,116,0.4);
+            border-radius:999px;
+            padding:8px 16px;
+            text-decoration:none;
+            white-space:nowrap;
+            transition:0.3s;
+        }
+        nav.toc a:hover {
+            background-color:#e8c574;
+            color:#000;
+        }
+
+        /* ===== Articles ===== */
+        main {
+            max-width:680px;
+            margin:0 auto;
+            padding:36px 20px 10px;
+        }
+        article {
+            margin-bottom:44px;
+            padding-bottom:36px;
+            border-bottom:1px solid rgba(255,255,255,0.08);
+        }
+        article:last-child { border-bottom:none; }
+
+        .art-eyebrow {
+            font-size:12px;
+            color:#e8c574;
+            letter-spacing:0.5px;
+            display:block;
+            margin-bottom:6px;
+        }
+        article h2 {
+            font-family:'Aref Ruqaa', serif;
+            font-size:1.55rem;
+            color:#fff;
+            margin-bottom:14px;
+            line-height:1.5;
+        }
+        article p {
+            font-size:15px;
+            line-height:2.05;
+            color:#e6e6e6;
+            margin-bottom:14px;
+        }
+        article ul {
+            margin:0 0 14px;
+            padding-right:20px;
+        }
+        article ul li {
+            font-size:15px;
+            line-height:2;
+            color:#e6e6e6;
+            margin-bottom:6px;
+        }
+        .note-box {
+            background:rgba(232,197,116,0.08);
+            border-right:3px solid #e8c574;
+            padding:14px 16px;
+            border-radius:6px;
+            font-size:14px;
+            line-height:1.9;
+            color:#f0e3c0;
+            margin-top:10px;
+        }
+
+        /* ===== Bottom CTA ===== */
+        .cta-block {
+            max-width:680px;
+            margin:10px auto 0;
+            padding:0 20px;
+            text-align:center;
+        }
+        .cta-block p {
+            font-size:14.5px;
+            color:#cbb98a;
+            margin-bottom:16px;
+        }
+        .cta {
+            display:inline-block;
+            background:linear-gradient(90deg,#caa24d,#f1da9e,#caa24d);
+            color:#1a1200;
+            font-weight:700;
+            padding:12px 30px;
+            border-radius:999px;
+            text-decoration:none;
+            font-size:15px;
+        }
+        .cta:hover {
+            transform:scale(1.05);
+        }
+
+        /* ===== Floating buttons ===== */
+        .float-btns { 
+            position:fixed; 
+            bottom:20px; 
+            left:0;
+            right:0;
+            display:flex; 
+            justify-content:space-between; 
+            padding:0 20px; 
+            z-index:50; 
+        }
+        .float-btn { 
+            width:56px; 
+            height:56px; 
+            border-radius:50%; 
+            display:flex; 
+            align-items:center; 
+            justify-content:center; 
+            box-shadow:0 4px 14px rgba(0,0,0,0.4);
+            transition:0.3s;
+        }
+        .float-btn:hover {
+            transform:scale(1.1);
+        }
+        .float-btn.call { background:#22c55e; }
+        .float-btn.whatsapp { background:#25D366; }
+        .float-btn svg { width:26px; height:26px; fill:#fff; }
     </style>
 </head>
 <body>
 
-    <header>
-        <h1>خدمات الأحوال الشخصية والتوثيق الشرعي</h1>
-        <p>نخبة من المتخصصين في التوثيق الشرعي والقانوني لضمان حقوقكم وحماية عائلاتكم</p>
-    </header>
+<header>
+    <a class="back-link" href="./">← الرجوع للصفحة الرئيسية</a>
+    <h1>إرشادات ومقالات الأحوال الشخصية</h1>
+    <p class="sub">دليلك الشامل لإجراءات عقود الزواج والطلاق والنفقة والحضانة وتوثيق جميع معاملات الأحوال الشخصية</p>
+    <div class="divider"></div>
+</header>
 
-    <div class="container">
+<nav class="toc">
+    <a href="#marriage">عقد الزواج</a>
+    <a href="#divorce">الطلاق والخلع</a>
+    <a href="#alimony">النفقة</a>
+    <a href="#custody">الحضانة</a>
+    <a href="#inheritance">التركات</a>
+</nav>
+
+<main>
+
+    <article id="marriage">
+        <span class="art-eyebrow">المقال الأول</span>
+        <h2>🎖️ عقد الزواج الشرعي وإجراءات التوثيق</h2>
+        <p>عقد الزواج هو العقد الشرعي والقانوني الذي يتم بين طرفي الزوجين أمام مأذون شرعي مرخص، ويترتب عليه جميع الحقوق والالتزامات الشرعية والقانونية.</p>
         
-        <a href="./" class="back-btn">← العودة للصفحة الرئيسية</a>
+        <p><strong>الأوراق المطلوبة لتوثيق عقد الزواج:</strong></p>
+        <ul>
+            <li>بطاقة الهوية الوطنية سارية المفعول للعروسين</li>
+            <li>شهادة ميلاد أصلية للعروسين</li>
+            <li>شهادة الفحص الطبي للعروسين (من مستشفى حكومي)</li>
+            <li>5 صور شخصية حديثة للعروسين</li>
+            <li>بطاقات هوية أصلية وسارية للشاهدين</li>
+            <li>في حالة المطلقة: قسيمة الطلاق الأصلية</li>
+            <li>في حالة الأرملة: قسيمة الزواج وشهادة الوفاة</li>
+        </ul>
 
-        <!-- روابط سريعة للوصول للقضايا -->
-        <div class="quick-links">
-            <a href="#divorce" class="quick-link-btn">الطلاق والخلع</a>
-            <a href="#alimony" class="quick-link-btn">النفقات والأجور</a>
-            <a href="#custody" class="quick-link-btn">الحضانة والمسكن</a>
-            <a href="#guardianship" class="quick-link-btn">الولاية والوصاية</a>
-            <a href="#inheritance" class="quick-link-btn">التركات والمواريث</a>
+        <div class="note-box">
+            <strong>ملاحظة هامة:</strong> كل حالة قد تحتاج أوراق إضافية حسب الظروف (عروسين بالخارج، فارق سن كبير، إلخ)، فالأفضل استشارة المأذون مباشرة قبل التجهيز.
         </div>
 
-        <div class="intro-box">
-            <p>نحن ملتزمون بتقديم الدعم الكامل في كافة قضايا محاكم الأسرة والنزاعات القضائية، والمسائل المتعلّقة بقوانين الأحوال الشخصية وتوثيقها شرعاً وقانوناً.</p>
+        <p><strong>المستندات للعروسين الأجانب:</strong></p>
+        <ul>
+            <li>جواز السفر ساري المفعول</li>
+            <li>شهادة عدم زواج موثقة من السفارة</li>
+            <li>إثبات الديانة الإسلامية (أو إشهار الإسلام إن لزم الحال)</li>
+            <li>وثيقة الإقامة أو التأشيرة الصالحة في مصر</li>
+        </ul>
+    </article>
+
+    <article id="divorce">
+        <span class="art-eyebrow">المقال الثاني</span>
+        <h2>⚖️ الطلاق والخلع وإجراءات التوثيق</h2>
+        <p>الطلاق هو حل عقد الزواج بإرادة الزوج، والخلع هو حل العقد برغبة الزوجة مقابل مبلغ مالي. كلا النوعين يجب أن يتم توثيقهما رسمياً أمام المأذون الشرعي.</p>
+
+        <p><strong>أنواع الطلاق:</strong></p>
+        <ul>
+            <li><strong>الطلاق الرجعي:</strong> الطلاق الذي يحق للزوج فيه إرجاع زوجته خلال العدة</li>
+            <li><strong>الطلاق البائن:</strong> الطلاق الذي لا يمكن إرجاع الزوجة فيه إلا بعقد ومهر جديد</li>
+            <li><strong>الخلع:</strong> الطلاق برضا الزوجة وإبراؤها الزوج من مستحقاتها</li>
+            <li><strong>الطلاق بالتراضي:</strong> الطلاق باتفاق الطرفين على شروط معينة</li>
+        </ul>
+
+        <p><strong>الأوراق المطلوبة لتوثيق الطلاق:</strong></p>
+        <ul>
+            <li>قسيمة الزواج الأصلية</li>
+            <li>بطاقة الهوية سارية للزوج والزوجة</li>
+            <li>شهادتا ميلاد الأطفال (إن وجدوا)</li>
+            <li>بطاقات هوية الشاهدين سارية</li>
+            <li>في حالة الخلع: إثبات المبلغ المالي المتفق عليه</li>
+        </ul>
+
+        <div class="note-box">
+            <strong>ملاحظة:</strong> عند الطلاق بالتراضي يجب الاتفاق على حقوق الأطفال والنفقة والحضانة، ويفضل توثيق هذه الاتفاقات كتابياً.
         </div>
 
-        <div class="services-grid">
-            <div class="service-card" id="divorce">
-                <h3>⚖️ قضايا الطلاق والخلع</h3>
-                <ul>
-                    <li>دعاوى الطلاق للضرر (للشقاق، لعدم الإنفاق، لتعدد الزوجات).</li>
-                    <li>إجراءات دعاوى الخلع وإبراء الذمة القانونية والمالية.</li>
-                    <li>توثيق وإثبات الطلاق الواقع قانوناً وشرعاً.</li>
-                </ul>
-            </div>
+        <p><strong>للمصريين بالخارج:</strong> يمكن توثيق الطلاق عن طريق توكيل من السفارة المصرية، ثم تفويض وكيل في مصر لإتمام الإجراء أمام المأذون.</p>
+    </article>
 
-            <div class="service-card" id="alimony">
-                <h3>💰 النفقات والأجور</h3>
-                <ul>
-                    <li>دعاوى نفقة الزوجية بنوعيها (الماضية والمستمرة).</li>
-                    <li>نفقات الصغار (مأكل، ملبس، مسكن، ومصاريف علاج).</li>
-                    <li>دعاوى زيادة أو تخفيض النفقات.</li>
-                </ul>
-            </div>
+    <article id="alimony">
+        <span class="art-eyebrow">المقال الثالث</span>
+        <h2>💰 النفقة والمستحقات المالية</h2>
+        <p>النفقة هي الالتزام المالي الذي يترتب على الزوج تجاه زوجته وأطفاله، وتشمل المأكل والملبس والمسكن والعلاج والتعليم.</p>
 
-            <div class="service-card" id="custody">
-                <h3>🏠 حضانة الصغار ومسكن الزوجية</h3>
-                <ul>
-                    <li>دعاوى ضم حضانة الصغار وإسقاطها ونقلها قانوناً.</li>
-                    <li>إجراءات قرار تمكين من مسكن الزوجية أو الحضانة.</li>
-                    <li>تنظيم وضبط دعاوى الرؤية والاصطحاب.</li>
-                </ul>
-            </div>
+        <p><strong>أنواع النفقة:</strong></p>
+        <ul>
+            <li><strong>نفقة الزوجية:</strong> التزام الزوج بإنفاق على زوجته طوال حياة الزوجية</li>
+            <li><strong>نفقة الأطفال:</strong> التزام الزوج بنفقة أطفاله من المأكل والملبس والمسكن والدواء والتعليم</li>
+            <li><strong>نفقة المتعة:</strong> تعويض مالي للزوجة عند الطلاق</li>
+            <li><strong>نفقة العدة:</strong> نفقة الزوجة أثناء فترة العدة بعد الطلاق</li>
+            <li><strong>نفقة الولد:</strong> استمرار النفقة حتى بلوغ الولد سن الكسب</li>
+        </ul>
 
-            <div class="service-card" id="guardianship">
-                <h3>📂 الولاية والوصاية والمنع من السفر</h3>
-                <ul>
-                    <li>إجراءات تعيين الوصي واستخراج قرارات النيابة الحسبية.</li>
-                    <li>قضايا الولاية على المال وإدارة أموال القصر.</li>
-                    <li>دعاوى المنع من السفر للصغار.</li>
-                </ul>
-            </div>
+        <p><strong>كيفية تحديد مبلغ النفقة:</strong> يتم تحديد النفقة بناءً على قدرة الزوج المالية وحاجة الزوجة والأطفال، ويمكن أن تتغير النفقة بناءً على تغير ظروف الزوج المالية.</p>
 
-            <div class="service-card" id="inheritance">
-                <h3>📜 التركات والمواريث</h3>
-                <ul>
-                    <li>استخراج إعلام الوراثة وتحديد الأنصبة الشرعية.</li>
-                    <li>دعاوى تقسيم التركات والمطالبة بالحقوق الميراثية.</li>
-                    <li>قضايا بطلان التصرفات المخالفة للشريعة.</li>
-                </ul>
-            </div>
+        <div class="note-box">
+            <strong>حقك:</strong> إذا توقف الزوج عن دفع النفقة، يحق لك رفع دعوى في محكمة الأسرة لإجبار الزوج على الدفع، وللمحكمة الحق في تنفيذ الحكم بطرق قانونية.
         </div>
+    </article>
 
-        <div class="cta-section">
-            <h2>هل تحتاج إلى استشارة شرعية وقانونية فورية؟</h2>
-            <a href="tel:01222432275" class="btn-contact">تواصل معنا الآن</a>
+    <article id="custody">
+        <span class="art-eyebrow">المقال الرابع</span>
+        <h2>👶 الحضانة والرؤية والمسكن</h2>
+        <p>الحضانة هي التزام شرعي وقانوني برعاية الطفل والعناية به بعد انفصال الوالدين. حق الحضانة يُمنح حسب الأفضلية الشرعية والمصلحة العليا للطفل.</p>
+
+        <p><strong>ترتيب أحقية الحضانة:</strong></p>
+        <ul>
+            <li>الأم (الأولوية الأولى خلال سن معينة)</li>
+            <li>الأب (بعد انتهاء حق الأم)</li>
+            <li>أم الأب (الجدة من جهة الأب)</li>
+            <li>أم الأم (الجدة من جهة الأم)</li>
+            <li>البنات الكبيرات غير المتزوجات</li>
+        </ul>
+
+        <p><strong>حقوق الوالد الآخر (الرؤية):</strong></p>
+        <ul>
+            <li>حق الزيارة المنتظمة للطفل</li>
+            <li>حق الاصطحاب في فترات محددة</li>
+            <li>حق قضاء الإجازات والأعياد</li>
+            <li>حق الاطلاع على صحة الطفل وتعليمه</li>
+        </ul>
+
+        <div class="note-box">
+            <strong>مسكن الحضانة:</strong> يحق لمن لديه الحضانة المسكن المناسب، والزوج ملزم بتوفير مسكن لحاضن الطفل إذا لم يكن لديه مسكن صالح.
         </div>
+    </article>
 
-    </div>
+    <article id="inheritance">
+        <span class="art-eyebrow">المقال الخامس</span>
+        <h2>📜 التركات والمواريث والحقوق الشرعية</h2>
+        <p>المراث هو انتقال أموال المتوفى إلى ورثته وفقاً لأحكام الشريعة الإسلامية. توثيق المراث يتطلب إجراءات قانونية محددة.</p>
 
-    <footer>
-        <p>&copy; 2026 مكتب الأستاذ شهاب محمد الشيمي الماذون الشرعي. جميع الحقوق محفوظة.</p>
-    </footer>
+        <p><strong>خطوات استخراج إعلام الوراثة:</strong></p>
+        <ul>
+            <li>تقديم طلب رسمي للمأذون الشرعي مع تقرير الجنة الطبية بالوفاة</li>
+            <li>عرض الطلب على الشاهدين اللذين يشهدان بالوفاة والوارثين</li>
+            <li>تحرير محضر إعلام الوراثة الموثق</li>
+            <li>إرسال نسخة للجهات المختصة (البنوك، العقارات، إلخ)</li>
+        </ul>
+
+        <p><strong>ترتيب الورثة الشرعيين:</strong></p>
+        <ul>
+            <li>الأبناء (الذكر بمثل حظ الأنثيين)</li>
+            <li>الأب والأم</li>
+            <li>الزوج أو الزوجة</li>
+            <li>الإخوة والأخوات</li>
+            <li>الأجداد والجدات</li>
+            <li>الأعمام والعمات والأخوال والخالات</li>
+        </ul>
+
+        <div class="note-box">
+            <strong>ملاحظة قانونية:</strong> توثيق المراث يجب أن يتم بناءً على شهادات ورثة موثوقين، ولا يمكن استخراج الإعلام بدون تحقق من هوية الورثة وصلاتهم الشرعية.
+        </div>
+    </article>
+
+</main>
+
+<div class="cta-block">
+    <p>لأي استفسار أو حالة خاصة، تواصل مع مكتب الأستاذ شهاب محمد الشيمي الماذون الشرعي</p>
+    <a class="cta" href="tel:01222432275">اتصل الآن — 01222432275</a>
+</div>
+
+<div class="float-btns">
+    <a class="float-btn call" href="tel:01222432275" aria-label="اتصال">
+        <svg viewBox="0 0 24 24"><path d="M6.62 10.79c1.44 2.83 3.76 5.14 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1v3.5c0 .55-.45 1-1 1H6.5v3h2c.55 0 1 .45 1 1v3z" fill="#fff"/></svg>
+    </a>
+    <a class="float-btn whatsapp" href="https://wa.me/201222432275" aria-label="واتساب">
+        <svg viewBox="0 0 24 24"><path d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 1.87.5 3.62 1.44 5.16L2 22l5.09-1.55a9.87 9.87 0 004.95 1.34h.01c5.46 0 9.9-4.45 9.9-9.91C21.95 6.45 17.5 2 12.04 2zm5.51 14.93c-.62 1.28-2.02 1.81-3.39 1.49-1.34-.31-2.36-1.43-2.51-2.84-.15-1.41.59-2.68 1.81-3.17 1.22-.49 2.68-.24 3.77.63 1.09.87 1.5 2.46.32 3.89z" fill="#fff"/></svg>
+    </a>
+</div>
 
 </body>
 </html>
