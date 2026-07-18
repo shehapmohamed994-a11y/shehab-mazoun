@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>مكتب الشيخ محمد الماذون الشرعي</title>
+<title>مكتب الأستاذ شهاب محمد الشيمي - الماذون الشرعي</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Aref+Ruqaa:wght@400;700&family=Cairo:wght@400;600;700;800&display=swap" rel="stylesheet">
 <style>
@@ -16,7 +16,10 @@
     min-height:100vh;
     position:relative;
     overflow-x:hidden;
+    padding-bottom:80px;
   }
+  
+  /* ===== HERO SECTION ===== */
   .hero {
     min-height:100vh;
     display:flex;
@@ -45,7 +48,6 @@
     -webkit-background-clip:text;
     background-clip:text;
     color:transparent;
-    text-shadow: 0 2px 18px rgba(0,0,0,0.5);
   }
   h1 span { display:block; }
   .divider {
@@ -96,6 +98,7 @@
     letter-spacing:0.3px;
     border:none;
     cursor:pointer;
+    transition:0.3s;
   }
   .cta:hover {
     transform: translateY(-2px);
@@ -103,6 +106,121 @@
   }
   .cta svg { width:20px; height:20px; }
 
+  .top-fade {
+    position:absolute; top:0; left:0; right:0; height:120px;
+    background: linear-gradient(to bottom, rgba(0,0,0,0.5), transparent);
+  }
+
+  /* ===== SERVICES SECTION ===== */
+  .services-section {
+    background:#0a0a0a;
+    padding:60px 20px;
+  }
+  .services-container {
+    max-width:1100px;
+    margin:0 auto;
+  }
+  .section-title {
+    font-family:'Aref Ruqaa', serif;
+    font-size:2.2rem;
+    color:#e8c574;
+    text-align:center;
+    margin-bottom:50px;
+    position:relative;
+    padding-bottom:20px;
+  }
+  .section-title::after {
+    content:'';
+    position:absolute;
+    bottom:0;
+    left:50%;
+    transform:translateX(-50%);
+    width:100px;
+    height:3px;
+    background:linear-gradient(90deg, transparent, #e8c574, transparent);
+  }
+
+  /* Navigation Tabs */
+  .nav-tabs {
+    display:flex;
+    flex-wrap:wrap;
+    justify-content:center;
+    gap:10px;
+    margin-bottom:40px;
+  }
+  .nav-tabs button {
+    background-color:#1a1a1a;
+    color:#e8c574;
+    border:1px solid #e8c574;
+    padding:10px 20px;
+    border-radius:20px;
+    cursor:pointer;
+    font-weight:600;
+    transition:0.3s;
+    font-family:'Cairo', sans-serif;
+    font-size:14px;
+  }
+  .nav-tabs button:hover,
+  .nav-tabs button.active {
+    background-color:#e8c574;
+    color:#000;
+  }
+
+  .services-grid {
+    display:grid;
+    grid-template-columns:repeat(auto-fit, minmax(300px, 1fr));
+    gap:25px;
+  }
+  .service-card {
+    background-color:#1e1e1e;
+    border:1px solid #333;
+    border-radius:8px;
+    padding:25px;
+    transition:all 0.3s ease;
+    box-shadow:0 4px 10px rgba(0,0,0,0.3);
+  }
+  .service-card:hover {
+    transform:translateY(-5px);
+    box-shadow:0 8px 20px rgba(232,197,116,0.2);
+    border-color:#e8c574;
+  }
+  .service-card h3 {
+    color:#e8c574;
+    font-size:1.4rem;
+    margin-bottom:15px;
+    border-bottom:1px solid #333;
+    padding-bottom:10px;
+  }
+  .service-card ul {
+    list-style:none;
+    padding-right:5px;
+  }
+  .service-card ul li {
+    color:#cccccc;
+    margin-bottom:10px;
+    position:relative;
+    padding-right:15px;
+    line-height:1.8;
+  }
+  .service-card ul li::before {
+    content:"•";
+    color:#e8c574;
+    font-weight:bold;
+    position:absolute;
+    right:0;
+  }
+  .note-box {
+    background:rgba(232,197,116,0.08);
+    border-right:3px solid #e8c574;
+    padding:12px 14px;
+    border-radius:4px;
+    font-size:13px;
+    line-height:1.8;
+    color:#e8c574;
+    margin-top:15px;
+  }
+
+  /* ===== FLOATING BUTTONS ===== */
   .float-btns {
     position:fixed;
     bottom:22px;
@@ -122,30 +240,42 @@
     justify-content:center;
     box-shadow: 0 6px 18px rgba(0,0,0,0.45);
     text-decoration:none;
-    transition: all 0.3s ease;
+    transition:0.3s;
   }
   .float-btn:hover {
-    transform: scale(1.1);
+    transform:scale(1.1);
   }
   .float-btn.call { background:#22c55e; }
   .float-btn.whatsapp { background:#25D366; }
   .float-btn svg { width:26px; height:26px; fill:#fff; }
 
-  .top-fade {
-    position:absolute; top:0; left:0; right:0; height:120px;
-    background: linear-gradient(to bottom, rgba(0,0,0,0.5), transparent);
+  /* ===== FOOTER ===== */
+  footer {
+    background:#000;
+    color:#777;
+    text-align:center;
+    padding:30px 20px;
+    border-top:1px solid #333;
+    font-size:13px;
+    margin-top:60px;
+  }
+
+  @media (max-width:768px) {
+    .section-title { font-size:1.8rem; }
+    .services-grid { grid-template-columns:1fr; }
   }
 </style>
 </head>
 <body>
 
+<!-- ===== HERO SECTION ===== -->
 <div class="hero">
   <div class="top-fade"></div>
   <div class="kicker">توثيق عقود الزواج والطلاق شرعًا وقانونًا</div>
   <h1><span>مكتب الأستاذ شهاب محمد الشيمي</span><span>الماذون الشرعي</span></h1>
   <div class="divider"></div>
   <p class="desc">
-    نقدّم خدمات شرعية وقانونية متكاملة لتوثيق عقود الزواج، وإشهادات الطلاق،
+    نقدّم خدمات شرعية وقانونية متكاملة لتوثيق عقود الزواج، وإشهادات الطلاق، والنفقة، والحضانة، والتركات،
     وفقًا لأحكام الشريعة الإسلامية والقانون المصري، لجميع المصريين والأجانب والمغتربين.
   </p>
   <p class="desc" id="branchAddress" style="font-size:14.5px; color:#e8c574; margin-top:2px;">
@@ -157,25 +287,250 @@
     <span class="area-pill">الإسكندرية</span>
     <span class="area-pill">القليوبية</span>
   </div>
-  <div style="text-align:center; margin-top:14px;">
-    <a href="articles.html" style="color:#e8c574; text-decoration:underline; font-size:14px;">📖 إرشادات ومقالات قانونية</a>
-  </div>
   <a class="cta" href="tel:01222432275">
     <svg viewBox="0 0 24 24" fill="currentColor"><path d="M6.62 10.79a15.05 15.05 0 006.59 6.59l2.2-2.2a1 1 0 011.11-.23c1.22.49 2.55.76 3.93.76a1 1 0 011 1V20a1 1 0 01-1 1C10.61 21 3 13.39 3 4a1 1 0 011-1h3.5a1 1 0 011 1v3a1 1 0 01-1 1H5.5v3h2a1 1 0 011 1v3z"/></svg>
     الاتصال بـ 01222432275
   </a>
 </div>
 
+<!-- ===== SERVICES SECTION ===== -->
+<section class="services-section">
+  <div class="services-container">
+    <h2 class="section-title">خدماتنا الشاملة</h2>
+    
+    <div class="nav-tabs">
+      <button class="tab-btn active" onclick="showTab('marriage')">عقد الزواج</button>
+      <button class="tab-btn" onclick="showTab('divorce')">الطلاق والخلع</button>
+      <button class="tab-btn" onclick="showTab('alimony')">النفقة</button>
+      <button class="tab-btn" onclick="showTab('custody')">الحضانة</button>
+      <button class="tab-btn" onclick="showTab('inheritance')">التركات</button>
+    </div>
+
+    <!-- Marriage Tab -->
+    <div id="marriage" class="tab-content">
+      <div class="services-grid">
+        <div class="service-card">
+          <h3>🎖️ عقد الزواج الشرعي</h3>
+          <ul>
+            <li>توثيق عقود الزواج أمام المأذون الشرعي</li>
+            <li>الأوراق المطلوبة: بطاقة، شهادة ميلاد، شهادة طبية، صور</li>
+            <li>معالجة حالات زواج الأجانب والمصريين بالخارج</li>
+            <li>استخراج قسائم الزواج الموثقة</li>
+          </ul>
+          <div class="note-box">تأكد من جاهزية جميع الأوراق قبل القدوم للمكتب</div>
+        </div>
+
+        <div class="service-card">
+          <h3>📋 أوراق عقد الزواج</h3>
+          <ul>
+            <li>5 صور شخصية للعروسين</li>
+            <li>بطاقة الهوية الوطنية سارية</li>
+            <li>شهادة ميلاد أصلية</li>
+            <li>شهادة الفحص الطبي</li>
+            <li>بطاقات الشاهدين</li>
+            <li>للأجانب: جواز سفر وشهادة عدم زواج</li>
+          </ul>
+          <div class="note-box">الحالات الخاصة قد تحتاج أوراق إضافية</div>
+        </div>
+
+        <div class="service-card">
+          <h3>🌍 زواج الأجانب</h3>
+          <ul>
+            <li>توثيق زواج الأجانب من مصريين</li>
+            <li>معالجة شهادات عدم الزواج الموثقة</li>
+            <li>إشهار الإسلام إن لزم الحال</li>
+            <li>التعامل مع متطلبات السفارات</li>
+            <li>استخراج الوثائق المعترف بها دولياً</li>
+          </ul>
+          <div class="note-box">كل جنسية لها متطلبات خاصة</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Divorce Tab -->
+    <div id="divorce" class="tab-content" style="display:none;">
+      <div class="services-grid">
+        <div class="service-card">
+          <h3>⚖️ الطلاق والخلع</h3>
+          <ul>
+            <li>توثيق الطلاق الرجعي والبائن</li>
+            <li>معالجة دعاوى الخلع والطلاق بالتراضي</li>
+            <li>إثبات الطلاق الواقع شرعاً وقانوناً</li>
+            <li>التعامل مع حالات الطلاق للمغتربين</li>
+            <li>استخراج قسائم الطلاق الموثقة</li>
+          </ul>
+          <div class="note-box">الطلاق يجب أن يتم بحضور شاهدين موثوقين</div>
+        </div>
+
+        <div class="service-card">
+          <h3>📄 أنواع الطلاق</h3>
+          <ul>
+            <li><strong>الطلاق الرجعي:</strong> يحق للزوج إرجاع زوجته خلال العدة</li>
+            <li><strong>الطلاق البائن:</strong> لا يمكن إرجاع الزوجة إلا بعقد جديد</li>
+            <li><strong>الخلع:</strong> طلاق برغبة الزوجة مقابل مبلغ مالي</li>
+            <li><strong>الطلاق بالتراضي:</strong> اتفاق بين الطرفين على الشروط</li>
+          </ul>
+          <div class="note-box">اختيار نوع الطلاق يترتب عليه حقوق مختلفة</div>
+        </div>
+
+        <div class="service-card">
+          <h3>🛂 الطلاق للمغتربين</h3>
+          <ul>
+            <li>توكيل من السفارة المصرية</li>
+            <li>تصديق التوكيل من وزارة الخارجية</li>
+            <li>تفويض وكيل في مصر</li>
+            <li>استخراج قسيمة الطلاق</li>
+            <li>معالجة طلاق الأجانب من مصريات</li>
+          </ul>
+          <div class="note-box">إجراءات الطلاق تختلف حسب مكان الإقامة</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Alimony Tab -->
+    <div id="alimony" class="tab-content" style="display:none;">
+      <div class="services-grid">
+        <div class="service-card">
+          <h3>💰 النفقة الزوجية</h3>
+          <ul>
+            <li>نفقة الزوجة أثناء الزواج</li>
+            <li>نفقة الزوجة بعد الطلاق</li>
+            <li>نفقة العدة والمتعة</li>
+            <li>تحديد مبلغ النفقة بناءً على قدرة الزوج</li>
+            <li>زيادة أو تخفيض النفقة حسب الظروف</li>
+          </ul>
+          <div class="note-box">النفقة تُحدد بناءً على دخل الزوج وحاجة الزوجة</div>
+        </div>
+
+        <div class="service-card">
+          <h3>👶 نفقة الأطفال</h3>
+          <ul>
+            <li>نفقة الصغار (مأكل، ملبس، مسكن)</li>
+            <li>مصاريف الطبيب والدواء والعلاج</li>
+            <li>مصاريف التعليم والمدارس</li>
+            <li>استمرار النفقة حتى بلوغ سن الكسب</li>
+            <li>معالجة حالات تعدد الأطفال</li>
+          </ul>
+          <div class="note-box">حق الطفل في النفقة حق شرعي لا يسقط</div>
+        </div>
+
+        <div class="service-card">
+          <h3>⚙️ تحديد النفقة</h3>
+          <ul>
+            <li>تقدير دخل الزوج الفعلي</li>
+            <li>دراسة احتياجات الزوجة والأطفال</li>
+            <li>مراعاة مستوى المعيشة السابق</li>
+            <li>الالتزام بقرارات المحكمة</li>
+            <li>معالجة حالات عدم الدفع</li>
+          </ul>
+          <div class="note-box">المحكمة لها الحق في إجبار الزوج على الدفع</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Custody Tab -->
+    <div id="custody" class="tab-content" style="display:none;">
+      <div class="services-grid">
+        <div class="service-card">
+          <h3>👶 الحضانة</h3>
+          <ul>
+            <li>رعاية الطفل والعناية به بعد الانفصال</li>
+            <li>ترتيب أحقية الحضانة شرعاً</li>
+            <li>نقل الحضانة من حاضن لآخر</li>
+            <li>إسقاط حق الحضانة عند عدم الكفاءة</li>
+            <li>توثيق اتفاقات الحضانة</li>
+          </ul>
+          <div class="note-box">الأم لها الأولوية في الحضانة خلال سنوات معينة</div>
+        </div>
+
+        <div class="service-card">
+          <h3>👀 حق الرؤية والاصطحاب</h3>
+          <ul>
+            <li>تنظيم حق الوالد الآخر في الرؤية</li>
+            <li>تحديد أيام ومواعيد الزيارة</li>
+            <li>حق الاصطحاب والذهاب للبيت</li>
+            <li>قضاء الإجازات والأعياد</li>
+            <li>الاطلاع على صحة الطفل وتعليمه</li>
+          </ul>
+          <div class="note-box">حق الرؤية حق شرعي لا يسقط إلا بسوء السلوك</div>
+        </div>
+
+        <div class="service-card">
+          <h3>🏠 مسكن الحضانة</h3>
+          <ul>
+            <li>توفير مسكن مناسب للحاضن والطفل</li>
+            <li>التزام الزوج بتوفير السكن</li>
+            <li>معايير جودة المسكن الصالح</li>
+            <li>معالجة نزاعات المسكن</li>
+            <li>تنفيذ قرارات المحكمة</li>
+          </ul>
+          <div class="note-box">المسكن جزء من حقوق الحضانة الكاملة</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Inheritance Tab -->
+    <div id="inheritance" class="tab-content" style="display:none;">
+      <div class="services-grid">
+        <div class="service-card">
+          <h3>📜 إعلام الوراثة</h3>
+          <ul>
+            <li>استخراج إعلام الوراثة الموثق</li>
+            <li>تحديد الورثة الشرعيين</li>
+            <li>حساب الأنصبة حسب الشريعة</li>
+            <li>معالجة حالات تعدد الورثة</li>
+            <li>تسليم الإعلام للجهات المختصة</li>
+          </ul>
+          <div class="note-box">إعلام الوراثة وثيقة رسمية يحتاجها البنوك والعقارات</div>
+        </div>
+
+        <div class="service-card">
+          <h3>💎 حساب الأنصبة الشرعية</h3>
+          <ul>
+            <li>الأبناء (الذكر بمثل حظ الأنثيين)</li>
+            <li>الأب والأم (بنسب محددة)</li>
+            <li>الزوج والزوجة (بحسب وجود أطفال)</li>
+            <li>الإخوة والأخوات</li>
+            <li>الأجداد والجدات والأعمام والأخوال</li>
+          </ul>
+          <div class="note-box">الحساب يتم طبقاً لأحكام الشريعة الإسلامية</div>
+        </div>
+
+        <div class="service-card">
+          <h3>🏦 إجراءات التوثيق</h3>
+          <ul>
+            <li>تقديم طلب رسمي مع شهادة الوفاة</li>
+            <li>تحقق من أهلية الورثة</li>
+            <li>استشهاد الشاهدين على الوفاة</li>
+            <li>تحرير محضر الوراثة الموثق</li>
+            <li>معالجة حالات الوصايا والدعاوى</li>
+          </ul>
+          <div class="note-box">الإجراء يستغرق أيام معدودة بعد الوفاة</div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- ===== FLOATING BUTTONS ===== -->
 <div class="float-btns">
   <a class="float-btn call" href="tel:01222432275" aria-label="اتصال">
     <svg viewBox="0 0 24 24"><path d="M6.62 10.79a15.05 15.05 0 006.59 6.59l2.2-2.2a1 1 0 011.11-.23c1.22.49 2.55.76 3.93.76a1 1 0 011 1V20a1 1 0 01-1 1C10.61 21 3 13.39 3 4a1 1 0 011-1h3.5a1 1 0 011 1v3a1 1 0 01-1 1H5.5v3h2a1 1 0 011 1v3z" fill="#fff"/></svg>
   </a>
   <a class="float-btn whatsapp" href="https://wa.me/201222432275" aria-label="واتساب">
-    <svg viewBox="0 0 24 24"><path d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 1.87.5 3.62 1.44 5.16L2 22l5.09-1.55a9.87 9.87 0 004.95 1.34h.01c5.46 0 9.9-4.45 9.9-9.91C21.95 6.45 17.5 2 12.04 2zm5.51 14.93c-.62 1.28-2.02 1.81-3.39 1.49-1.34-.31-2.36-1.43-2.51-2.84-.15-1.41.59-2.68 1.81-3.17 1.22-.49 2.68-.24 3.77.63 1.09.87 1.5 2.46.32 3.89zm-1.33-7.89c-1.6 0-3.07.71-4.08 1.95-.37.44-.65.94-.86 1.45-.2.51-.32 1.04-.36 1.57 0 1.05.31 2.09.91 2.96.6.87 1.47 1.51 2.5 1.83 1.03.32 2.14.31 3.16-.03 1.01-.34 1.87-1 2.43-1.87.56-.87.8-1.88.7-2.88-.1-1-.57-1.93-1.3-2.57-.73-.64-1.68-1-2.7-1zm-7.3 8.65c-.87-.28-1.62-.85-2.12-1.59-.5-.74-.74-1.6-.7-2.48.04-.88.35-1.71.88-2.39.53-.68 1.27-1.16 2.09-1.39.82-.23 1.68-.16 2.45.2.77.36 1.39.99 1.77 1.78.38.79.48 1.68.27 2.52-.21.84-.73 1.57-1.43 2.04-.7.47-1.54.68-2.38.57-.84-.11-1.62-.52-2.13-1.16z" fill="#fff"/></svg>
+    <svg viewBox="0 0 24 24"><path d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 1.87.5 3.62 1.44 5.16L2 22l5.09-1.55a9.87 9.87 0 004.95 1.34h.01c5.46 0 9.9-4.45 9.9-9.91C21.95 6.45 17.5 2 12.04 2zm5.51 14.93c-.62 1.28-2.02 1.81-3.39 1.49-1.34-.31-2.36-1.43-2.51-2.84-.15-1.41.59-2.68 1.81-3.17 1.22-.49 2.68-.24 3.77.63 1.09.87 1.5 2.46.32 3.89z" fill="#fff"/></svg>
   </a>
 </div>
 
+<!-- ===== FOOTER ===== -->
+<footer>
+  <p>&copy; 2026 مكتب الأستاذ شهاب محمد الشيمي الماذون الشرعي. جميع الحقوق محفوظة.</p>
+  <p style="margin-top:10px; font-size:12px;">للاستفسار: 01222432275 | واتساب: https://wa.me/201222432275</p>
+</footer>
+
 <script>
+  // ===== BRANCH LOCATION =====
   var branches = [
     { name: "سيدي بشر قبلي", area: "الإسكندرية", address: "شارع 62 متفرع من شارع ملك حفني، سيدي بشر قبلي – الإسكندرية 21634", lat: 31.2051, lng: 30.0751 },
     { name: "أبو قير", area: "الإسكندرية", address: "شارع طوسون، أعلى فودافون مصر أبو قير – الإسكندرية", lat: 31.3251, lng: 30.0669 },
@@ -202,8 +557,7 @@
     var R = 6371;
     var dLat = toRad(lat2-lat1);
     var dLng = toRad(lng2-lng1);
-    var a = Math.sin(dLat/2)*Math.sin(dLat/2) +
-            Math.cos(toRad(lat1))*Math.cos(toRad(lat2))*Math.sin(dLng/2)*Math.sin(dLng/2);
+    var a = Math.sin(dLat/2)*Math.sin(dLat/2) + Math.cos(toRad(lat1))*Math.cos(toRad(lat2))*Math.sin(dLng/2)*Math.sin(dLng/2);
     var c = 2*Math.atan2(Math.sqrt(a), Math.sqrt(1-a));
     return R*c;
   }
@@ -230,6 +584,18 @@
     );
   } else {
     showBranch(branches[0], '');
+  }
+
+  // ===== TABS FUNCTIONALITY =====
+  function showTab(tabName) {
+    var tabs = document.querySelectorAll('.tab-content');
+    tabs.forEach(function(tab) { tab.style.display = 'none'; });
+    
+    var buttons = document.querySelectorAll('.tab-btn');
+    buttons.forEach(function(btn) { btn.classList.remove('active'); });
+    
+    document.getElementById(tabName).style.display = 'block';
+    event.target.classList.add('active');
   }
 </script>
 
