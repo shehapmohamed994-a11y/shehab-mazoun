@@ -22,7 +22,6 @@
     overflow-x:hidden;
     padding-bottom:80px;
   }
-  /* reuse styles from original file (truncated here for brevity) */
   .hero{min-height:60vh;display:flex;flex-direction:column;justify-content:flex-end;align-items:center;position:relative;padding:32px 24px 44px}
   .kicker{color:#e8c574;font-size:15px;letter-spacing:1px;font-weight:600;margin-bottom:10px;text-align:center}
   h1{font-family:'Aref Ruqaa',serif;font-size:clamp(34px,9vw,54px);font-weight:700;text-align:center;line-height:1.25;background:linear-gradient(180deg,#fbe9b0 0%,#d4a94a 55%,#a9782c 100%);-webkit-background-clip:text;background-clip:text;color:transparent}
@@ -40,8 +39,12 @@
   footer{background:#000;color:#777;text-align:center;padding:30px 20px;border-top:1px solid #333;font-size:13px;margin-top:40px}
   .content-section{max-width:1100px;margin:30px auto;padding:20px}
   .content-section article{background:#0b0b0b;padding:18px;border-radius:8px;margin-bottom:18px;border:1px solid rgba(255,255,255,0.03)}
-  .branches-list{list-style:none;padding-right:0}
+  .branches-actions{display:flex;gap:12px;flex-wrap:wrap;justify-content:center;margin-top:8px}
+  .btn{background:#1f2937;color:#fff;padding:10px 16px;border-radius:8px;border:1px solid rgba(232,197,116,0.12);cursor:pointer}
+  .btn.primary{background:#e8c574;color:#000}
+  .branches-list{list-style:none;padding-right:0;display:none}
   .branches-list li{background:#0f0f0f;padding:12px;border-radius:6px;margin-bottom:10px;border:1px solid rgba(232,197,116,0.06);color:#e6e6e6}
+  .result-box{background:#081018;padding:12px;border-radius:8px;border:1px solid rgba(232,197,116,0.06);color:#e6e6e6;margin-top:12px;text-align:center}
   @media (max-width:768px){.section-title{font-size:1.8rem}.services-grid{grid-template-columns:1fr}}
 </style>
 </head>
@@ -84,38 +87,6 @@
       </div>
     </div>
 
-    <div id="divorce" class="tab-content" style="display:none"> <!-- content omitted for brevity, unchanged -->
-      <div class="services-grid">
-        <div class="service-card"><h3 style="color:#e8c574;margin-bottom:10px">⚖️ الطلاق والخلع</h3><ul style="padding-right:12px;color:#ccc"><li>توثيق الطلاق الرجعي والبائن</li><li>معالجة دعاوى الخلع والطلاق بالتراضي</li></ul><div class="note-box">الطلاق يجب أن يتم بحضور شاهدين موثوقين</div></div>
-        <div class="service-card"><h3 style="color:#e8c574;margin-bottom:10px">📄 أنواع الطلاق</h3><ul style="padding-right:12px;color:#ccc"><li>الطلاق الرجعي، البائن، الخلع، بالتراضي</li></ul></div>
-        <div class="service-card"><h3 style="color:#e8c574;margin-bottom:10px">🛂 الطلاق للمغتربين</h3><ul style="padding-right:12px;color:#ccc"><li>توكيل من السفارة المصرية</li></ul></div>
-      </div>
-    </div>
-
-    <div id="alimony" class="tab-content" style="display:none">
-      <div class="services-grid">
-        <div class="service-card"><h3 style="color:#e8c574;margin-bottom:10px">💰 النفقة الزوجية</h3><ul style="padding-right:12px;color:#ccc"><li>نفقة الزوجة أثناء الزواج</li><li>نفقة الأطفال</li></ul><div class="note-box">النفقة تُحدد بناءً على دخل الزوج وحاجة الأسرة</div></div>
-        <div class="service-card"><h3 style="color:#e8c574;margin-bottom:10px">👶 نفقة الأطفال</h3><ul style="padding-right:12px;color:#ccc"><li>مصاريف التعليم والطعام والدواء</li></ul></div>
-        <div class="service-card"><h3 style="color:#e8c574;margin-bottom:10px">⚙️ تحديد النفقة</h3><ul style="padding-right:12px;color:#ccc"><li>تقدير دخل الزوج الفعلي</li></ul></div>
-      </div>
-    </div>
-
-    <div id="custody" class="tab-content" style="display:none">
-      <div class="services-grid">
-        <div class="service-card"><h3 style="color:#e8c574;margin-bottom:10px">👶 الحضانة</h3><ul style="padding-right:12px;color:#ccc"><li>رعاية الطفل بعد الانفصال</li></ul><div class="note-box">الأم لها الأولوية في الحضانة خلال سنوات معينة</div></div>
-        <div class="service-card"><h3 style="color:#e8c574;margin-bottom:10px">👀 حق الرؤية</h3><ul style="padding-right:12px;color:#ccc"><li>تنظيم مواعيد الزيارة</li></ul></div>
-        <div class="service-card"><h3 style="color:#e8c574;margin-bottom:10px">🏠 مسكن الحضانة</h3><ul style="padding-right:12px;color:#ccc"><li>توفير مسكن مناسب للحاضن</li></ul></div>
-      </div>
-    </div>
-
-    <div id="inheritance" class="tab-content" style="display:none">
-      <div class="services-grid">
-        <div class="service-card"><h3 style="color:#e8c574;margin-bottom:10px">📜 إعلام الوراثة</h3><ul style="padding-right:12px;color:#ccc"><li>استخراج إعلام الوراثة الموثق</li></ul></div>
-        <div class="service-card"><h3 style="color:#e8c574;margin-bottom:10px">💎 حساب الأنصبة</h3><ul style="padding-right:12px;color:#ccc"><li>حساب الأنصبة الشرعية</li></ul></div>
-        <div class="service-card"><h3 style="color:#e8c574;margin-bottom:10px">🏦 إجراءات التوثيق</h3><ul style="padding-right:12px;color:#ccc"><li>تقديم طلب رسمي مع شهادة الوفاة</li></ul></div>
-      </div>
-    </div>
-
   </div>
 </section>
 
@@ -127,71 +98,25 @@
     <span class="art-eyebrow">المقال الأول</span>
     <h3 style="color:#fff; margin-bottom:8px">🎖️ عقد الزواج الشرعي وإجراءات التوثيق</h3>
     <p style="color:#e6e6e6; line-height:1.9">عقد الزواج هو العقد الشرعي والقانوني الذي يتم بين طرفي الزوجين أمام مأذون شرعي مرخص، ويترتب عليه حقوق والتزامات... (مقتطف من المقالات)</p>
-    <ul style="color:#e6e6e6; padding-right:18px"> 
-      <li>بطاقة الهوية الوطنية سارية المفعول للعروسين</li>
-      <li>شهادة ميلاد أصلية للعروسين</li>
-      <li>شهادة الفحص الطبي</li>
-      <li>5 صور شخصية حديثة</li>
-    </ul>
-  </article>
-
-  <article>
-    <span class="art-eyebrow">المقال الثاني</span>
-    <h3 style="color:#fff; margin-bottom:8px">⚖️ الطلاق والخلع وإجراءات التوثيق</h3>
-    <p style="color:#e6e6e6; line-height:1.9">الطلاق هو حل عقد الزواج بإرادة الزوج، والخلع هو حل العقد برغبة الزوجة مقابل مبلغ مالي...</p>
-  </article>
-
-  <article>
-    <span class="art-eyebrow">المقال الثالث</span>
-    <h3 style="color:#fff; margin-bottom:8px">💰 النفقة والمستحقات المالية</h3>
-    <p style="color:#e6e6e6; line-height:1.9">النفقة هي الالتزام المالي الذي يترتب على الزوج تجاه زوجته وأطفاله...</p>
   </article>
 
 </section>
 
-<!-- ===== MERGED CONTENT: دليل الأحوال الشخصية (مقتطف) ===== -->
-<section class="content-section" id="law-guide">
-  <h2 style="font-family:'Aref Ruqaa', serif; font-size:1.9rem; color:#e8c574; text-align:center; margin-bottom:14px">دليل قانون الأحوال الشخصية</h2>
-
-  <article>
-    <span class="art-eyebrow">الحالة ١</span>
-    <h3 style="color:#fff">الزواج</h3>
-    <p style="color:#e6e6e6; line-height:1.9">الزواج في القانون المصري عقد شرعي يتم بين رجل وامرأة تتوافر فيهما شروط الأهلية...</p>
-  </article>
-
-  <article>
-    <span class="art-eyebrow">الحالة ٢</span>
-    <h3 style="color:#fff">الطلاق</h3>
-    <p style="color:#e6e6e6; line-height:1.9">الطلاق حق أصيل للزوج في الشريعة الإسلامية...</p>
-  </article>
-
-</section>
-
-<!-- ===== NEW: عناوين المكاتب والفروع المضافة من المستخدم ===== -->
+<!-- ===== BRANCHES: interactive, no visible duplicated list ===== -->
 <section class="content-section" id="branches">
   <h2 style="font-family:'Aref Ruqaa', serif; font-size:1.9rem; color:#e8c574; text-align:center; margin-bottom:14px">عناوين المكاتب والفروع</h2>
-  <p style="color:#e6e6e6; text-align:center; margin-bottom:12px">أضفنا المكاتب والعناوين الجديدة التي أرسلتها. يمكنك فتح الخريطة لكل مكتب إذا كان هناك رابط.</p>
+  <p style="color:#e6e6e6; text-align:center; margin-bottom:12px">اضغط على الزر أدناه ليُعرض لك أقرب مكتب إليك (المتصفح سيطلب إذن تحديد الموقع).</p>
 
-  <ul class="branches-list" id="branchList">
-    <!-- Existing branches (few examples kept) -->
-    <li>المنشية، الإسكندرية — شارع 96 الجزائر، المنشية</li>
-    <li>شبرا الخيمة، القليوبية — شارع أبو الهنا</li>
+  <div class="branches-actions">
+    <button class="btn primary" id="findNearestBtn">عرض أقرب مكتب لي</button>
+    <button class="btn" id="showAllBtn">عرض كل المكاتب (روابط إلى الخرائط)</button>
+  </div>
 
-    <!-- New user-provided offices -->
-    <li>الخصوص — المأذون الشرعى الشيخ محمد، أعلى فطائر ابو سمرة، الخصوص العمومى، الكوبرى الاول، قسم الخصوص، محافظة القليوبية 13774
-      <br><a href="https://maps.app.goo.gl/diX84bDz89XeFReT9?g_st=awb" target="_blank" style="color:#e8c574;text-decoration:underline">عرض الموقع على الخريطة</a>
-    </li>
+  <div id="nearestResult" class="result-box" aria-live="polite" style="display:none"></div>
 
-    <li>منشأة ناصر — مكتب المأذون الشرعى الشيخ احمد صلاح، رمز بلس: 27XM+4WC، الأباجية، منشأة ناصر، محافظة القاهرة 4421622</li>
+  <ul class="branches-list" id="branchList"></ul>
 
-    <li>أمبابة — نظارات الاتحاد Eletahad Optics مصطفى سلام، محكمة السودان، 27، ترعة السواحل، أمبابة</li>
-
-    <li>الخصوص، 19 المدينة المنورة، الخصوص، قسم الخصوص، محافظة القليوبية</li>
-
-    <li>طريق النصر، الأباجية، الخليفة، محافظة القاهرة</li>
-  </ul>
-
-  <p style="color:#e6e6e6; margin-top:8px">إذا كان لديك إحداثيات (latitude, longitude) لأي مكتب، أرسلها لأدرجها في تحديد أقرب فرع.</p>
+  <p style="color:#e6e6e6; margin-top:8px">ملاحظة: لكي يعمل زر "أقرب مكتب" يجب أن تسمح للموقع (Location) في متصفحك. إن لم ترغب في إتاحة الموقع، استخدم زر "عرض كل المكاتب" لفتح روابط البحث على خرائط جوجل لكل عنوان.</p>
 </section>
 
 <!-- ===== FLOATING BUTTONS ===== -->
@@ -210,31 +135,23 @@
 </footer>
 
 <script>
-  // ===== BRANCH LOCATION (existing list kept minimal for performance) =====
+  // ===== Branches data: include entries with coordinates for nearest calculation =====
   var branches = [
-    { name: "أبو قير", area: "الإسكندرية", address: "شارع طوسون، أعلى فودافون مصر أبو قير – الإسكندرية", lat: 31.3251, lng: 30.0669 },
-    { name: "محرم بك", area: "الإسكندرية", address: "شارع 21 الرصافة، محرم بك – الإسكندرية", lat: 31.1889, lng: 29.9268 },
-    { name: "شبرا الخيمة", area: "القليوبية", address: "شارع أبو الهنا، شبرا الخيمة – القليوبية", lat: 30.1286, lng: 31.2442 },
-    { name: "المعادي", area: "القاهرة", address: "عمارات الشرطة، المعادي – القاهرة", lat: 29.9602, lng: 31.2569 }
+    { name: "أبو قير", area: "الإسكندرية", address: "شارع طوسون، أبو قير — الإسكندرية", lat: 31.3251, lng: 30.0669, map: 'https://www.google.com/maps/search/?api=1&query=31.3251,30.0669' },
+    { name: "محرم بك", area: "الإسكندرية", address: "شارع 21 الرصافة، محرم بك — الإسكندرية", lat: 31.1889, lng: 29.9268, map: 'https://www.google.com/maps/search/?api=1&query=31.1889,29.9268' },
+    { name: "شبرا الخيمة", area: "القليوبية", address: "شارع أبو الهنا، شبرا الخيمة — القليوبية", lat: 30.1286, lng: 31.2442, map: 'https://www.google.com/maps/search/?api=1&query=30.1286,31.2442' },
+    { name: "المعادي", area: "القاهرة", address: "عمارات الشرطة، المعادي — القاهرة", lat: 29.9602, lng: 31.2569, map: 'https://www.google.com/maps/search/?api=1&query=29.9602,31.2569' }
   ];
 
+  // other offices (no duplicates) - used for 'show all' fallback
   var otherOffices = [
     { title: 'الخصوص — المأذون الشرعى الشيخ محمد', address: 'أعلى فطائر ابو سمرة، الخصوص العمومى، الكوبرى الاول، قسم الخصوص، محافظة القليوبية 13774', map: 'https://maps.app.goo.gl/diX84bDz89XeFReT9?g_st=awb' },
-    { title: 'منشاة ناصر — مكتب المأذون الشرعى الشيخ احمد صلاح', address: '27XM+4WC، الأباجية، منشأة ناصر، محافظة القاهرة 4421622' },
-    { title: 'أمبابة — مكتب أمبابة (نظارات الاتحاد - مصطفى سلام)', address: 'محكمة السودان، ٢٧، ترعة السواحل، أمبابة' },
+    { title: 'منشأة ناصر — مكتب المأذون الشرعى الشيخ احمد صلاح', address: '27XM+4WC، الأباجية، منشأة ناصر، محافظة القاهرة 4421622' },
+    { title: 'أمبابة — نظارات الاتحاد (مصطفى سلام)', address: 'محكمة السودان، ٢٧، ترعة السواحل، أمبابة' },
     { title: 'الخصوص — 19 المدينة المنورة', address: '19 المدينة المنورة، الخصوص، قسم الخصوص، محافظة القليوبية' },
     { title: 'طريق النصر — الأباجية، الخليفة', address: 'طريق النصر، الأباجية، الخليفة، محافظة القاهرة' }
   ];
 
-  // render other offices into branchList (non-blocking)
-  var listEl = document.getElementById('branchList');
-  otherOffices.forEach(function(o){
-    var li = document.createElement('li');
-    li.innerHTML = '<strong>'+o.title+'</strong> — '+o.address + (o.map ? '<br><a href="'+o.map+'" target="_blank" style="color:#e8c574;text-decoration:underline">عرض الموقع على الخريطة</a>' : '');
-    listEl.appendChild(li);
-  });
-
-  // ===== Geo nearest (skip branches without coords) =====
   function toRad(v){ return v * Math.PI / 180; }
   function distanceKm(lat1, lng1, lat2, lng2){
     var R = 6371;
@@ -245,34 +162,74 @@
     return R*c;
   }
 
-  function showBranch(branch, extra){
-    var el = document.getElementById('branchAddress');
-    el.textContent = (extra || 'أقرب فرع لك: ') + branch.name + ' — ' + branch.address;
-  }
+  function showNearestOffice(){
+    var resultEl = document.getElementById('nearestResult');
+    resultEl.style.display = 'block';
+    resultEl.textContent = 'جارٍ الحصول على موقعك...';
 
-  function findNearest(userLat, userLng){
-    var nearest = null, minDist = Infinity;
-    branches.forEach(function(b){
-      if(typeof b.lat === 'number' && typeof b.lng === 'number'){
-        var d = distanceKm(userLat, userLng, b.lat, b.lng);
-        if(d < minDist){ minDist = d; nearest = b; }
+    if(!navigator.geolocation){
+      resultEl.textContent = 'المتصفح لا يدعم تحديد الموقع. اضغط على "عرض كل المكاتب" لرؤية روابط البحث.';
+      return;
+    }
+
+    navigator.geolocation.getCurrentPosition(function(pos){
+      var lat = pos.coords.latitude, lng = pos.coords.longitude;
+      var nearest = null, minDist = Infinity;
+      branches.forEach(function(b){
+        if(typeof b.lat === 'number' && typeof b.lng === 'number'){
+          var d = distanceKm(lat, lng, b.lat, b.lng);
+          if(d < minDist){ minDist = d; nearest = b; }
+        }
+      });
+
+      if(nearest){
+        resultEl.innerHTML = '<strong>أقرب مكتب لك:</strong><br>' + nearest.name + ' — ' + nearest.address + '<br>' +
+          'المسافة تقريبًا: ' + Math.round(minDist*10)/10 + ' كم' + '<br><a href="'+nearest.map+'" target="_blank" style="color:#e8c574;text-decoration:underline">افتح الاتجاهات على الخريطة</a>';
+      } else {
+        // No branches with coords matched; offer to show all offices instead
+        resultEl.innerHTML = 'لا توجد مكاتب معرفة بإحداثيات لعرض الأقرب. اضغط على "عرض كل المكاتب" لعرض الروابط.';
       }
+
+    }, function(err){
+      resultEl.textContent = 'تعذّر الحصول على الإذن أو الموقع. رجاءً تأكد من سماح المتصفح لتحديد الموقع ثم أعد المحاولة.';
+    }, { timeout:10000, maximumAge:60000 });
+  }
+
+  function showAllOffices(){
+    var listEl = document.getElementById('branchList');
+    listEl.innerHTML = '';
+    // Add branches with coords first
+    branches.forEach(function(b){
+      var li = document.createElement('li');
+      li.innerHTML = '<strong>'+b.name+'</strong><br>'+b.address+'<br><a href="'+b.map+'" target="_blank" style="color:#e8c574;text-decoration:underline">افتح في خرائط جوجل</a>';
+      listEl.appendChild(li);
     });
-    if(nearest) showBranch(nearest, 'أقرب فرع لك: ');
-    else document.getElementById('branchAddress').textContent = 'الموقع غير متوفر لعرض أقرب فرع، راجع قائمة الفروع أدناه.';
+    // Add other offices (generate google search link when map not provided)
+    otherOffices.forEach(function(o){
+      var li = document.createElement('li');
+      var mapLink = o.map ? o.map : ('https://www.google.com/maps/search/?api=1&query=' + encodeURIComponent(o.address));
+      li.innerHTML = '<strong>'+o.title+'</strong><br>'+o.address+'<br><a href="'+mapLink+'" target="_blank" style="color:#e8c574;text-decoration:underline">افتح في الخريطة</a>';
+      listEl.appendChild(li);
+    });
+    listEl.style.display = 'block';
+    listEl.scrollIntoView({behavior:'smooth'});
   }
 
-  if(navigator.geolocation){
-    navigator.geolocation.getCurrentPosition(
-      function(pos){ findNearest(pos.coords.latitude, pos.coords.longitude); },
-      function(){ document.getElementById('branchAddress').textContent = 'تعذر الوصول للموقع الجغرافي، افتح القائمة أدناه لرؤية العناوين.'; },
-      { timeout: 8000 }
-    );
-  } else {
-    document.getElementById('branchAddress').textContent = 'المتصفح لا يدعم تحديد الموقع — راجع قائمة الفروع أدناه.';
-  }
+  document.getElementById('findNearestBtn').addEventListener('click', showNearestOffice);
+  document.getElementById('showAllBtn').addEventListener('click', showAllOffices);
 
-  // Tabs functionality (keeps original behavior)
+  // Render otherOffices into branchList as hidden backup (preloaded)
+  (function preloadList(){
+    var listEl = document.getElementById('branchList');
+    otherOffices.forEach(function(o){
+      var li = document.createElement('li');
+      var mapLink = o.map ? o.map : ('https://www.google.com/maps/search/?api=1&query=' + encodeURIComponent(o.address));
+      li.innerHTML = '<strong>'+o.title+'</strong><br>'+o.address+'<br><a href="'+mapLink+'" target="_blank" style="color:#e8c574;text-decoration:underline">افتح في الخريطة</a>';
+      listEl.appendChild(li);
+    });
+  })();
+
+  // Tab functionality
   function showTab(tabName){
     var tabs = document.querySelectorAll('.tab-content');
     tabs.forEach(function(tab){ tab.style.display='none'; });
