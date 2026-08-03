@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>مكتب الشيخ محمد المأذون الشرعي</title>
+<meta name="description" content="مكتب الشيخ محمد المأذون الشرعي - خدمات شرعية وتوثيق زواج وطلاق - فروع في القاهرة والجيزة والقليوبية والإسكندرية">
+<style>
+  * { margin:0; padding:0; box-sizing:border-box; }
+  body {
+    font-family:'Tahoma','Segoe UI',sans-serif;
+    background:#0d0d0d;
+    color:#f2f2f2;
+    line-height:1.7;
+  }
+  header {
+    background:#000;
+    border-bottom:2px solid #d4af37;
+    padding:35px 20px;
+    text-align:center;
+  }
+  header h1 { color:#d4af37; font-size:1.9rem; margin-bottom:8px; }
+  header p { color:#ccc; font-size:1rem; }
+
+  .container { max-width:800px; margin:0 auto; padding:30px 15px; }
+
+  /* بطاقة أقرب فرع */
+  #nearest-box {
+    background:#1a1a1a;
+    border:1px solid #333;
+    border-right:5px solid #d4af37;
+    border-radius:10px;
+    padding:22px;
+    margin-bottom:35px;
+    text-align:center;
+  }
+  #nearest-box h2 { color:#d4af37; font-size:1.2rem; margin-bottom:12px; }
+  #nearest-box .branch-name { color:#fff; font-weight:bold; font-size:1.15rem; margin-bottom:6px; }
+  #nearest-box .branch-addr { color:#ccc; font-size:0.95rem; margin-bottom:14px; }
+  #nearest-box .loading { color:#aaa; font-size:0.95rem; }
+  .btn {
+    display:inline-block;
+    background:#d4af37;
+    color:#000;
+    font-weight:bold;
+    padding:10px 22px;
+    border-radius:8px;
+    text-decoration:none;
+    font-size:0.95rem;
+    margin-top:6px;
+  }
+  .btn-outline {
+    display:inline-block;
+    border:1px solid #d4af37;
+    color:#d4af37;
+    padding:8px 18px;
+    border-radius:8px;
+    text-decoration:none;
+    font-size:0.9rem;
+    margin-top:10px;
+  }
+
+  /* روابط الصفحات */
+  .section-title {
+    color:#d4af37;
+    border-bottom:1px solid #333;
+    padding-bottom:8px;
+    margin-bottom:15px;
+    font-size:1.15rem;
+  }
+  a.page-link {
+    display:block;
+    background:#1a1a1a;
+    border:1px solid #333;
+    border-right:4px solid #d4af37;
+    border-radius:8px;
+    padding:16px 20px;
+    margin-bottom:12px;
+    color:#fff;
+    text-decoration:none;
+    font-size:1.02rem;
+    transition:0.2s;
+  }
+  a.page-link:hover { background:#232323; border-right-color:#fff; }
+
+  footer { text-align:center; padding:25px; color:#888; font-size:0.85rem; border-top:1px solid #222; margin-top:20px; }
+</style>
+</head>
+<body>
+
+<header>
+  <h1>مكتب الشيخ محمد المأذون الشرعي</h1>
+  <p>مأذون شرعي | خدمات شرعية وتوثيق الزواج والطلاق</p>
+</header>
+
+<div class="container">
+
+  <!-- بطاقة أقرب فرع -->
+  <div id="nearest-box">
+    <h2>أقرب فرع لك</h2>
+    <div id="nearest-result">
+      <p class="loading">جاري تحديد موقعك...</p>
+    </div>
+  </div>
+
+  <!-- روابط المحتوى -->
+  <div class="section-title">دليل الأحوال الشخصية</div>
+  <a class="page-link" href="دليل-الأحوال-الشخصية-شهاب.html">الدليل الشامل لأحكام الأحوال الشخصية الشرعية</a>
+  <a class="page-link" href="أحوال-شخصية-شهاب.html">دليل أحكام الأحوال الشخصية الشرعية</a>
+
+  <div class="section-title" style="margin-top:30px;">الفتاوى الشرعية</div>
+  <a class="page-link" href="الفتاوى-الشرعية-للزواج-والطلاق.html">الفتاوى الشرعية للزواج والطلاق</a>
+
+  <div class="section-title" style="margin-top:30px;">المقالات</div>
+  <a class="page-link" href="articles.html">مقالات المكتب</a>
+
+</div>
+
+<footer>
+  © مكتب الشيخ محمد المأذون الشرعي — جميع الحقوق محفوظة
+</footer>
+
+<script>
+// بيانات الفروع (لا تُعرض بالكامل على الصفحة أبدًا - تُستخدم فقط لحساب الأقرب)
+const branches = [
+  { name: "المقر الرئيسي", addr: "ش العشرين، فيصل، الجيزة", lat: 29.9750, lon: 31.2000 },
+  { name: "فرع إمبابة", addr: "مصطفى سلام، محكمة السودان، 27، ترعة السواحل، إمبابة، الجيزة", lat: 30.0771, lon: 31.2080 },
+  { name: "فرع القاهرة الجديدة", addr: "414 عمارات النرجس، محور جمال عبد الناصر، القاهرة الجديدة", lat: 30.0286, lon: 31.4959 },
+  { name: "فرع المعادي", addr: "21 عمارات الشرطة، ش 233، الشقة 41، الدور 4، المعادي", lat: 29.9603, lon: 31.2597 },
+  { name: "فرع المقطم", addr: "15 ش 9، الدور 1، المقطم", lat: 29.9870, lon: 31.2990 },
+  { name: "فرع الوايلي", addr: "ش أحمد سعيد، متفرع من ش رمسيس، الوايلي", lat: 30.0596, lon: 31.2600 },
+  { name: "فرع بولاق", addr: "3 ش قطب الدين مرسي، متفرع من محور 26 يوليو، بولاق", lat: 30.0596, lon: 31.2380 },
+  { name: "فرع حدائق القبة", addr: "20 عمارات الشركة السعودية، ش السواح، حدائق القبة", lat: 30.1030, lon: 31.2870 },
+  { name: "فرع مدينة الشروق", addr: "طريق الشباب، داخل ذا جيت مول، الدور الثاني، مدينة الشروق", lat: 30.1949, lon: 31.6119 },
+  { name: "فرع مصر الجديدة", addr: "13 ش الخليفة المأمون، مصر الجديدة", lat: 30.0875, lon: 31.3244 },
+  { name: "فرع الأميرية", addr: "25 ش الكابلات، خلف محكمة الأميرية، الأميرية", lat: 30.1010, lon: 31.2890 },
+  { name: "فرع البساتين", addr: "56 الشارع الجديد، البساتين", lat: 29.9500, lon: 31.2800 },
+  { name: "فرع الخليفة", addr: "طريق النصر، الأباجية، الخليفة، القاهرة", lat: 30.0170, lon: 31.2650 },
+  { name: "فرع الشروق - شرق مدينة نصر", addr: "شرق مدينة نصر، الشروق، القاهرة", lat: 30.1250, lon: 31.3850 },
+  { name: "فرع المطرية", addr: "عبد العاطي معاش، العزب، قسم المطرية، القاهرة", lat: 30.1290, lon: 31.3230 },
+  { name: "فرع شبرا الخيمة", addr: "20 ش محمد أبو الهنا، شبرا الخيمة", lat: 30.1286, lon: 31.2422 },
+  { name: "فرع الخصوص", addr: "19 المدينة المنورة، الخصوص، قسم الخصوص، القليوبية", lat: 30.1500, lon: 31.3080 },
+  { name: "فرع العبور", addr: "الحي الأول، العبور، القليوبية", lat: 30.1970, lon: 31.4720 },
+  { name: "فرع أبو قير", addr: "ش طوسون، أعلى فودافون، أبو قير، الإسكندرية", lat: 31.3167, lon: 30.0667 },
+  { name: "فرع العطارين", addr: "12 ش مسجد العطارين، أمام مطعم ملك السمان، العطارين، الإسكندرية", lat: 31.1970, lon: 29.8990 },
+  { name: "فرع المنشية", addr: "96 ش الجزائر، المنشية، الإسكندرية", lat: 31.1980, lon: 29.8950 },
+  { name: "فرع سيدي بشر", addr: "ش 62، بجوار صيدلية د. سالم، سيدي بشر قبلي، الإسكندرية", lat: 31.2650, lon: 29.9800 },
+  { name: "فرع سموحة", addr: "16 ميدان سموحة، سيدي جابر، الإسكندرية", lat: 31.2160, lon: 29.9430 },
+  { name: "فرع محرم بك", addr: "21 ش الرصافة، محرم بك، الإسكندرية", lat: 31.1890, lon: 29.9130 }
+];
+
+// معادلة Haversine لحساب المسافة بين نقطتين بالكيلومتر
+function haversine(lat1, lon1, lat2, lon2) {
+  const R = 6371;
+  const dLat = (lat2 - lat1) * Math.PI / 180;
+  const dLon = (lon2 - lon1) * Math.PI / 180;
+  const a = Math.sin(dLat/2) * Math.sin(dLat/2) +
+            Math.cos(lat1 * Math.PI / 180) * Math.cos(lat2 * Math.PI / 180) *
+            Math.sin(dLon/2) * Math.sin(dLon/2);
+  const c = 2 * Math.atan2(Math.sqrt(a), Math.sqrt(1 - a));
+  return R * c;
+}
+
+function showNearest(userLat, userLon) {
+  let nearest = branches[0];
+  let minDist = Infinity;
+  branches.forEach(b => {
+    const d = haversine(userLat, userLon, b.lat, b.lon);
+    if (d < minDist) { minDist = d; nearest = b; }
+  });
+  document.getElementById("nearest-result").innerHTML = `
+    <div class="branch-name">${nearest.name}</div>
+    <div class="branch-addr">${nearest.addr}</div>
+    <a class="btn" href="https://www.google.com/maps/search/?api=1&query=${nearest.lat},${nearest.lon}" target="_blank">افتح الموقع على الخريطة</a>
+  `;
+}
+
+function showFallback() {
+  document.getElementById("nearest-result").innerHTML = `
+    <p style="color:#ccc; margin-bottom:10px;">من فضلك فعّل خدمة تحديد الموقع من المتصفح عشان نوريك أقرب فرع ليك.</p>
+    <a class="btn-outline" onclick="location.reload()">إعادة المحاولة</a>
+  `;
+}
+
+if (navigator.geolocation) {
+  navigator.geolocation.getCurrentPosition(
+    pos => showNearest(pos.coords.latitude, pos.coords.longitude),
+    err => showFallback(),
+    { timeout: 8000 }
+  );
+} else {
+  showFallback();
+}
+</script>
+
+</body>
+</html>
