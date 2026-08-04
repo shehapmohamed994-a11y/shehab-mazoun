@@ -24,7 +24,6 @@
 
   .container { max-width:800px; margin:0 auto; padding:30px 15px; }
 
-  /* بطاقة أقرب فرع */
   #nearest-box {
     background:#1a1a1a;
     border:1px solid #333;
@@ -49,6 +48,23 @@
     font-size:0.95rem;
     margin-top:6px;
   }
+  .contact-row {
+    display:flex;
+    gap:10px;
+    justify-content:center;
+    margin-top:12px;
+    flex-wrap:wrap;
+  }
+  .btn-call, .btn-whatsapp {
+    display:inline-block;
+    padding:10px 20px;
+    border-radius:8px;
+    text-decoration:none;
+    font-size:0.9rem;
+    font-weight:bold;
+  }
+  .btn-call { background:#2a2a2a; color:#fff; border:1px solid #d4af37; }
+  .btn-whatsapp { background:#25D366; color:#000; }
   .btn-outline {
     display:inline-block;
     border:1px solid #d4af37;
@@ -60,7 +76,6 @@
     margin-top:10px;
   }
 
-  /* روابط الصفحات */
   .section-title {
     color:#d4af37;
     border-bottom:1px solid #333;
@@ -95,7 +110,6 @@
 
 <div class="container">
 
-  <!-- بطاقة أقرب فرع -->
   <div id="nearest-box">
     <h2>أقرب فرع لك</h2>
     <div id="nearest-result">
@@ -103,7 +117,6 @@
     </div>
   </div>
 
-  <!-- روابط المحتوى -->
   <div class="section-title">دليل الأحوال الشخصية</div>
   <a class="page-link" href="دليل-الأحوال-الشخصية-شهاب.html">الدليل الشامل لأحكام الأحوال الشخصية الشرعية</a>
   <a class="page-link" href="أحوال-شخصية-شهاب.html">دليل أحكام الأحوال الشخصية الشرعية</a>
@@ -121,7 +134,6 @@
 </footer>
 
 <script>
-// بيانات الفروع (لا تُعرض بالكامل على الصفحة أبدًا - تُستخدم فقط لحساب الأقرب)
 const branches = [
   { name: "المقر الرئيسي", addr: "ش العشرين، فيصل، الجيزة", lat: 29.9750, lon: 31.2000 },
   { name: "فرع إمبابة", addr: "مصطفى سلام، محكمة السودان، 27، ترعة السواحل، إمبابة، الجيزة", lat: 30.0771, lon: 31.2080 },
@@ -149,7 +161,6 @@ const branches = [
   { name: "فرع محرم بك", addr: "21 ش الرصافة، محرم بك، الإسكندرية", lat: 31.1890, lon: 29.9130 }
 ];
 
-// معادلة Haversine لحساب المسافة بين نقطتين بالكيلومتر
 function haversine(lat1, lon1, lat2, lon2) {
   const R = 6371;
   const dLat = (lat2 - lat1) * Math.PI / 180;
@@ -172,6 +183,10 @@ function showNearest(userLat, userLon) {
     <div class="branch-name">${nearest.name}</div>
     <div class="branch-addr">${nearest.addr}</div>
     <a class="btn" href="https://www.google.com/maps/search/?api=1&query=${nearest.lat},${nearest.lon}" target="_blank">افتح الموقع على الخريطة</a>
+    <div class="contact-row">
+      <a class="btn-call" href="tel:01222432275">📞 اتصال</a>
+      <a class="btn-whatsapp" href="https://wa.me/201222432275" target="_blank">💬 واتساب</a>
+    </div>
   `;
 }
 
@@ -179,6 +194,10 @@ function showFallback() {
   document.getElementById("nearest-result").innerHTML = `
     <p style="color:#ccc; margin-bottom:10px;">من فضلك فعّل خدمة تحديد الموقع من المتصفح عشان نوريك أقرب فرع ليك.</p>
     <a class="btn-outline" onclick="location.reload()">إعادة المحاولة</a>
+    <div class="contact-row">
+      <a class="btn-call" href="tel:01222432275">📞 اتصال</a>
+      <a class="btn-whatsapp" href="https://wa.me/201222432275" target="_blank">💬 واتساب</a>
+    </div>
   `;
 }
 
