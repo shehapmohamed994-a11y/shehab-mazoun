@@ -55,10 +55,7 @@
       font-size: 1.05rem;
     }
 
-    .nav-logo svg {
-      width: 36px;
-      height: 36px;
-    }
+    .nav-logo svg { width: 36px; height: 36px; }
 
     .nav-links {
       display: none;
@@ -75,9 +72,7 @@
     }
 
     .nav-links a:hover,
-    .nav-links a.active {
-      color: var(--gold);
-    }
+    .nav-links a.active { color: var(--gold); }
 
     .menu-btn {
       background: none;
@@ -240,9 +235,7 @@
       margin-bottom: 16px;
     }
 
-    .loading {
-      color: #999;
-    }
+    .loading { color: #999; }
 
     .contact-row {
       display: flex;
@@ -264,23 +257,16 @@
       border: 1px solid var(--gold);
     }
 
-    .btn-call:hover {
-      background: #333;
-    }
+    .btn-call:hover { background: #333; }
 
     .btn-whatsapp {
       background: var(--whatsapp);
       color: #111;
     }
 
-    .btn-whatsapp:hover {
-      filter: brightness(1.08);
-    }
+    .btn-whatsapp:hover { filter: brightness(1.08); }
 
-    .links-grid {
-      display: grid;
-      gap: 14px;
-    }
+    .links-grid { display: grid; gap: 14px; }
 
     a.page-link {
       display: flex;
@@ -316,9 +302,7 @@
     }
 
     @media (min-width: 600px) {
-      .services {
-        grid-template-columns: repeat(3, 1fr);
-      }
+      .services { grid-template-columns: repeat(3, 1fr); }
     }
 
     .service-card {
@@ -330,9 +314,7 @@
       transition: border-color 0.2s;
     }
 
-    .service-card:hover {
-      border-color: var(--gold);
-    }
+    .service-card:hover { border-color: var(--gold); }
 
     .service-card .icon {
       font-size: 2rem;
@@ -348,6 +330,196 @@
     .service-card p {
       color: var(--text-muted);
       font-size: 0.9rem;
+    }
+
+    /* ===== الأقسام الجديدة ===== */
+    .docs-list {
+      background: var(--dark-2);
+      border: 1px solid #333;
+      border-right: 5px solid var(--gold);
+      border-radius: 14px;
+      padding: 24px 22px;
+      margin-bottom: 20px;
+    }
+
+    .docs-list h3 {
+      color: var(--gold);
+      font-size: 1.15rem;
+      margin-bottom: 14px;
+    }
+
+    .docs-list ul {
+      list-style: none;
+      padding: 0;
+    }
+
+    .docs-list li {
+      position: relative;
+      padding-right: 22px;
+      margin-bottom: 10px;
+      color: var(--text-muted);
+      font-size: 0.95rem;
+    }
+
+    .docs-list li::before {
+      content: "•";
+      color: var(--gold);
+      position: absolute;
+      right: 0;
+      font-weight: bold;
+    }
+
+    .booking-box {
+      background: var(--dark-2);
+      border: 1px solid #333;
+      border-radius: 16px;
+      padding: 30px 24px;
+      max-width: 560px;
+      margin: 0 auto;
+    }
+
+    .booking-box label {
+      display: block;
+      margin-bottom: 6px;
+      font-weight: 600;
+      color: var(--gold);
+      font-size: 0.95rem;
+    }
+
+    .booking-box input,
+    .booking-box select,
+    .booking-box textarea {
+      width: 100%;
+      padding: 13px 14px;
+      border: 1px solid #444;
+      border-radius: 10px;
+      background: var(--dark-3);
+      color: #fff;
+      font-family: inherit;
+      font-size: 1rem;
+      margin-bottom: 16px;
+    }
+
+    .booking-box input:focus,
+    .booking-box select:focus,
+    .booking-box textarea:focus {
+      outline: none;
+      border-color: var(--gold);
+    }
+
+    .booking-box button {
+      width: 100%;
+      padding: 15px;
+      background: var(--whatsapp);
+      color: #111;
+      border: none;
+      border-radius: 10px;
+      font-weight: 700;
+      font-size: 1.05rem;
+      cursor: pointer;
+      font-family: inherit;
+      transition: all 0.25s;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+    }
+
+    .booking-box button:hover {
+      filter: brightness(1.08);
+      transform: translateY(-2px);
+    }
+
+    .phone-note {
+      text-align: center;
+      margin-top: 18px;
+      font-size: 0.95rem;
+      color: var(--text-muted);
+    }
+
+    .phone-note a {
+      color: var(--gold);
+      font-weight: 700;
+      text-decoration: none;
+      font-size: 1.1rem;
+    }
+
+    .testimonials-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 18px;
+    }
+
+    @media (min-width: 640px) {
+      .testimonials-grid { grid-template-columns: repeat(2, 1fr); }
+    }
+
+    @media (min-width: 900px) {
+      .testimonials-grid { grid-template-columns: repeat(3, 1fr); }
+    }
+
+    .testimonial-card {
+      background: var(--dark-2);
+      border: 1px solid #333;
+      border-right: 4px solid var(--gold);
+      border-radius: 14px;
+      padding: 22px 18px;
+    }
+
+    .stars {
+      color: var(--gold);
+      font-size: 1.1rem;
+      margin-bottom: 10px;
+      letter-spacing: 2px;
+    }
+
+    .testimonial-card p {
+      color: var(--text-muted);
+      font-size: 0.92rem;
+      font-style: italic;
+      line-height: 1.75;
+      margin-bottom: 14px;
+    }
+
+    .testimonial-card .name {
+      color: var(--gold);
+      font-weight: 700;
+      font-size: 0.95rem;
+    }
+
+    .faq-item {
+      background: var(--dark-2);
+      border: 1px solid #333;
+      border-radius: 12px;
+      margin-bottom: 12px;
+      overflow: hidden;
+    }
+
+    .faq-item summary {
+      padding: 16px 18px;
+      cursor: pointer;
+      font-weight: 700;
+      color: var(--gold);
+      font-size: 1rem;
+      list-style: none;
+    }
+
+    .faq-item summary::-webkit-details-marker { display: none; }
+
+    .faq-item summary::after {
+      content: "+";
+      float: left;
+      font-size: 1.3rem;
+      color: var(--gold);
+    }
+
+    .faq-item[open] summary::after { content: "−"; }
+
+    .faq-item p {
+      padding: 0 18px 16px;
+      color: var(--text-muted);
+      font-size: 0.95rem;
+      line-height: 1.8;
     }
 
     .float-btns {
@@ -373,9 +545,7 @@
       font-size: 1.5rem;
     }
 
-    .float-btn:hover {
-      transform: scale(1.08);
-    }
+    .float-btn:hover { transform: scale(1.08); }
 
     .float-call {
       background: var(--gold);
@@ -415,9 +585,7 @@
       gap: 16px;
     }
 
-    .mobile-menu.open {
-      display: flex;
-    }
+    .mobile-menu.open { display: flex; }
 
     .mobile-menu a {
       color: var(--text);
@@ -428,9 +596,7 @@
       border-bottom: 1px solid #222;
     }
 
-    .mobile-menu a:hover {
-      color: var(--gold);
-    }
+    .mobile-menu a:hover { color: var(--gold); }
 
     @media (min-width: 768px) {
       .nav-links { display: flex; }
@@ -451,6 +617,8 @@
     <ul class="nav-links">
       <li><a href="#" class="active">الرئيسية</a></li>
       <li><a href="#services">الخدمات</a></li>
+      <li><a href="#docs">الأوراق المطلوبة</a></li>
+      <li><a href="#booking">حجز موعد</a></li>
       <li><a href="#nearest">أقرب فرع</a></li>
       <li><a href="#links">المزيد</a></li>
     </ul>
@@ -460,10 +628,13 @@
   <div class="mobile-menu" id="mobileMenu">
     <a href="#" onclick="toggleMenu()">الرئيسية</a>
     <a href="#services" onclick="toggleMenu()">الخدمات</a>
+    <a href="#docs" onclick="toggleMenu()">الأوراق المطلوبة</a>
+    <a href="#booking" onclick="toggleMenu()">حجز موعد</a>
     <a href="#nearest" onclick="toggleMenu()">أقرب فرع</a>
     <a href="#links" onclick="toggleMenu()">المزيد</a>
   </div>
 
+  <!-- ===== الهيرو ===== -->
   <section class="hero">
     <div class="hero-content">
       <h1>مكتب الشيخ محمد<br>المأذون الشرعي</h1>
@@ -472,16 +643,13 @@
         نقدم خدمات شرعية وقانونية متكاملة لتوثيق عقود الزواج وإشهادات الطلاق والصداق وفقاً لأحكام الشريعة.
       </p>
       <div class="hero-btns">
-        <a class="btn btn-gold" href="tel:01222432275">
-          📞 اتصال الآن
-        </a>
-        <a class="btn btn-outline" href="https://wa.me/201222432275" target="_blank" rel="noopener">
-          💬 واتساب
-        </a>
+        <a class="btn btn-gold" href="tel:01222432275">📞 اتصال الآن</a>
+        <a class="btn btn-outline" href="https://wa.me/201222432275" target="_blank" rel="noopener">💬 واتساب</a>
       </div>
     </div>
   </section>
 
+  <!-- ===== الخدمات ===== -->
   <section class="section" id="services">
     <div class="section-title">
       <h2>خدماتنا</h2>
@@ -506,6 +674,217 @@
     </div>
   </section>
 
+  <!-- ===== الأوراق المطلوبة ===== -->
+  <section class="section" id="docs">
+    <div class="section-title">
+      <h2>الأوراق والمستندات المطلوبة</h2>
+      <p>جهّز أوراقك قبل الموعد لتسهيل الإجراءات</p>
+    </div>
+
+    <div class="docs-list">
+      <h3>1. الأوراق المطلوبة لعقد الزواج (كتب الكتاب)</h3>
+      <ul>
+        <li>بطاقة الرقم القومي سارية للعريس والعروس + صور منها</li>
+        <li>شهادة ميلاد حديثة لكل من الطرفين</li>
+        <li>شهادة الفحص الطبي (الشهادة الصحية) معتمدة من وزارة الصحة</li>
+        <li>4 إلى 5 صور شخصية حديثة مقاس 4×6 لكل طرف</li>
+        <li>حضور شاهدين مسلمين بالغين يحملان بطاقة رقم قومي سارية</li>
+        <li>في حالة القاصرة (أقل من 21 سنة): حضور ولي الأمر + قرار وصاية إن لزم</li>
+        <li>في حالة المطلقة: أصل إشهاد الطلاق أو حكم الطلاق النهائي + وثيقة طلاق مميكنة</li>
+        <li>في حالة الأرملة: أصل شهادة وفاة الزوج السابق + وثيقة الزواج السابقة</li>
+      </ul>
+    </div>
+
+    <div class="docs-list">
+      <h3>2. الأوراق المطلوبة للطلاق</h3>
+      <ul>
+        <li>بطاقة الرقم القومي للزوج + صور منها</li>
+        <li>بطاقة الرقم القومي للزوجة (أو صورة منها في الطلاق الغيابي)</li>
+        <li>أصل وثيقة الزواج الرسمية (ورقية أو قيد مميكن)</li>
+        <li>حضور شاهدين مسلمين بالغين</li>
+        <li>في الطلاق الحضوري: حضور الزوجة شخصيًا</li>
+      </ul>
+    </div>
+
+    <div class="docs-list">
+      <h3>3. الأوراق المطلوبة للرجعة (المراجعة)</h3>
+      <ul>
+        <li>أصل إشهاد الطلاق</li>
+        <li>بطاقات الرقم القومي للزوجين</li>
+        <li>أصل وثيقة الزواج</li>
+        <li>حضور شاهدين مسلمين</li>
+        <li>يجب توثيق الرجعة خلال فترة العدة</li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- ===== نموذج حجز موعد (واتساب) ===== -->
+  <section class="section" id="booking">
+    <div class="section-title">
+      <h2>احجز موعدك الآن</h2>
+      <p>املأ البيانات وسيتم فتح واتساب برسالة جاهزة</p>
+    </div>
+
+    <div class="booking-box">
+      <form id="whatsappForm" onsubmit="sendToWhatsApp(event)">
+        <label>الاسم الكامل</label>
+        <input type="text" id="name" name="name" required placeholder="أدخل اسمك الثلاثي">
+
+        <label>رقم الهاتف</label>
+        <input type="tel" id="phone" name="phone" required placeholder="01xxxxxxxxx">
+
+        <label>نوع الخدمة</label>
+        <select id="service" name="service" required>
+          <option value="">اختر الخدمة</option>
+          <option value="عقد زواج (كتب كتاب)">عقد زواج (كتب كتاب)</option>
+          <option value="إجراءات طلاق">إجراءات طلاق</option>
+          <option value="رجعة / مراجعة">رجعة / مراجعة</option>
+          <option value="استشارة">استشارة</option>
+          <option value="أخرى">أخرى</option>
+        </select>
+
+        <label>التاريخ المقترح</label>
+        <input type="date" id="date" name="date">
+
+        <label>ملاحظات إضافية (اختياري)</label>
+        <textarea id="notes" name="notes" rows="3" placeholder="أي تفاصيل تريد إضافتها..."></textarea>
+
+        <button type="submit">💬 إرسال عبر واتساب</button>
+      </form>
+      <p class="phone-note">
+        أو اتصل مباشرة: <a href="tel:01222432275">01222432275</a>
+      </p>
+    </div>
+  </section>
+
+  <!-- ===== آراء العملاء ===== -->
+  <section class="section" id="testimonials">
+    <div class="section-title">
+      <h2>آراء وتقييمات عملائنا</h2>
+      <p>أكثر من مئات العائلات وثقت فينا</p>
+    </div>
+
+    <div class="testimonials-grid">
+      <div class="testimonial-card">
+        <div class="stars">★★★★★</div>
+        <p>"تعامل راقي جدًا ومحترم. الشيخ محمد كان ملتزم بالموعد تمامًا وشرح لنا كل حاجة ببساطة. كتب لنا الكتاب في القاعة بدون أي تأخير. أنصح بيه بشدة."</p>
+        <div class="name">— أحمد محمود</div>
+      </div>
+      <div class="testimonial-card">
+        <div class="stars">★★★★★</div>
+        <p>"أفضل مأذون تعاملت معاه. راجع الأوراق قبل الموعد ووفر علينا وقت ومجهود كبير. الخدمة سريعة والكلام واضح وصريح. ربنا يبارك فيه."</p>
+        <div class="name">— سارة إبراهيم</div>
+      </div>
+      <div class="testimonial-card">
+        <div class="stars">★★★★★</div>
+        <p>"كنت متوترة جدًا من الإجراءات، بس الشيخ طمني ووضحلي كل التفاصيل. كتب لنا الكتاب في البيت بمنتهى الاحتراف. شكرًا من القلب."</p>
+        <div class="name">— نورا حسن</div>
+      </div>
+      <div class="testimonial-card">
+        <div class="stars">★★★★★</div>
+        <p>"سرعة ودقة واحترام. المكتب منظم والرد على التليفون سريع. عملنا الرجعة بكل سهولة ووضح لنا كل حاجة تخص العدة. ممتاز جدًا."</p>
+        <div class="name">— محمد عبد الرحمن</div>
+      </div>
+      <div class="testimonial-card">
+        <div class="stars">★★★★★</div>
+        <p>"تعاملت مع أكثر من مأذون قبل كده، بس الشيخ محمد فرق معايا تمامًا. أسلوبه مهذب وفاهم شغله كويس جدًا. الكتب تم في القاعة بكل سلاسة."</p>
+        <div class="name">— يوسف علي</div>
+      </div>
+      <div class="testimonial-card">
+        <div class="stars">★★★★★</div>
+        <p>"جزاه الله خيرًا. ساعدنا في تجهيز الأوراق وراجعها بنفسه قبل الموعد. مفيش أي مفاجآت يوم الكتب. أنصح أي حد يتعامل معاه."</p>
+        <div class="name">— فاطمة أحمد</div>
+      </div>
+      <div class="testimonial-card">
+        <div class="stars">★★★★★</div>
+        <p>"مأذون محترم وملتزم. جه في الموعد المحدد بالظبط وخلص الإجراءات بسرعة. الأسعار واضحة ومفيش أي زيادات مفاجئة. تجربة ممتازة."</p>
+        <div class="name">— كريم سعيد</div>
+      </div>
+      <div class="testimonial-card">
+        <div class="stars">★★★★★</div>
+        <p>"الشيخ محمد من أفضل الناس اللي اتعاملت معاهم. صبور وبيجاوب على كل الأسئلة بهدوء. كتب لنا الكتاب وكنا مرتاحين جدًا."</p>
+        <div class="name">— هدى محمود</div>
+      </div>
+      <div class="testimonial-card">
+        <div class="stars">★★★★★</div>
+        <p>"خدمة على أعلى مستوى. المأذون بينتقل للقاعات والمنازل بسهولة. الأوراق اتراجعت قبلها بيوم فمفيش أي تأخير. شكرًا جزيلاً."</p>
+        <div class="name">— عمرو حسن</div>
+      </div>
+      <div class="testimonial-card">
+        <div class="stars">★★★★★</div>
+        <p>"أنصح بيه بشدة. أسلوبه راقي وفاهم القانون كويس. عملنا إجراءات الطلاق بكل سهولة ووضح لنا كل التفاصيل. محترم جدًا."</p>
+        <div class="name">— رنا عبد الله</div>
+      </div>
+      <div class="testimonial-card">
+        <div class="stars">★★★★★</div>
+        <p>"من أفضل التجارب. الشيخ ملتزم وبيحترم المواعيد جدًا. الكتب تم في وقت قياسي والأسعار مناسبة. ربنا يوفقه."</p>
+        <div class="name">— مصطفى إبراهيم</div>
+      </div>
+      <div class="testimonial-card">
+        <div class="stars">★★★★★</div>
+        <p>"تعامل إنساني ومحترم. ساعدنا في كل حاجة ووضح لنا الأوراق المطلوبة بدقة. مفيش أي لخبطة. أنصح كل المقبلين على الجواز يتعاملوا معاه."</p>
+        <div class="name">— دينا كمال</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== الأسئلة الشائعة ===== -->
+  <section class="section" id="faq">
+    <div class="section-title">
+      <h2>الأسئلة الشائعة</h2>
+      <p>إجابات سريعة على أكثر الاستفسارات</p>
+    </div>
+
+    **Summary:**
+ما هي الأوراق المطلوبة لكتب الكتاب؟
+      <p>بطاقة الرقم القومي سارية + شهادة ميلاد حديثة + الشهادة الصحية + 4-5 صور شخصية لكل طرف + شاهدين مسلمين. وفي حالات خاصة (مطلقة / أرملة / قاصرة) تُطلب مستندات إضافية.</p>
+
+    **Summary:**
+ما هي مدة استلام قسيمة الزواج المميكنة؟
+      <p>بعد توثيق العقد لدى المأذون يتم تسجيله في محكمة الأسرة ثم ينتقل إلى منظومة الأحوال المدنية. عادةً ما تصبح القسيمة متاحة خلال أسابيع قليلة، ويمكن استخراجها من أي سجل مدني أو إلكترونيًا عبر بوابة وزارة الداخلية.</p>
+
+    **Summary:**
+هل ينتقل المأذون إلى القاعات والمنازل؟
+      <p>نعم، يمكن الاتفاق على انتقال المأذون إلى القاعات أو المنازل حسب رغبة العائلة، مع التنسيق المسبق ومراعاة الاختصاص المكاني.</p>
+
+    **Summary:**
+كيف يتم احتساب رسوم مؤخر الصداق؟
+      <p>الرسوم تشمل رسوم التوثيق الرسمية بالإضافة إلى نسبة من قيمة مؤخر الصداق (تختلف حسب قيمة المؤخر). يُفضل الاستفسار مباشرة عند حجز الموعد لمعرفة التفاصيل الدقيقة حسب حالتك.</p>
+
+    **Summary:**
+ما هو السن القانوني للزواج؟
+      <p>السن القانوني هو 18 سنة ميلادية لكل من العريس والعروس. إذا كانت العروس أقل من 21 سنة يلزم حضور ولي الأمر.</p>
+
+    **Summary:**
+هل الشهادة الصحية ضرورية؟ وكم مدتها؟
+      <p>نعم، الشهادة الصحية إلزامية ومعتمدة من وزارة الصحة. يُفضل استخراجها قبل موعد العقد بأسبوع على الأقل لأن إصدارها قد يستغرق عدة أيام.</p>
+
+    **Summary:**
+كم عدد الشهود المطلوبين؟
+      <p>شاهدان مسلمان بالغان عاقلان يحملان بطاقة رقم قومي سارية. يُفضل أن يكون سنهما أكبر من 21 سنة.</p>
+
+    **Summary:**
+هل يمكن حجز موعد مسبق وفحص الأوراق؟
+      <p>نعم، يُفضل حجز موعد مسبق وفحص الأوراق قبل يوم العقد لتجنب أي تأخير أو نقص في المستندات.</p>
+
+    **Summary:**
+ما الفرق بين الطلاق الحضوري والغيابي؟
+      <p>الطلاق الحضوري يتم بحضور الزوجين معًا، أما الغيابي فيتم بحضور الزوج فقط مع إعلان الزوجة لاحقًا. كلاهما يتم توثيقه رسميًا لدى المأذون.</p>
+
+    **Summary:**
+متى يمكن عمل الرجعة (المراجعة)؟
+      <p>يمكن توثيق الرجعة خلال فترة العدة فقط (ثلاث حيضات أو 90 يومًا حسب الحالة). يجب توثيقها رسميًا لدى المأذون.</p>
+
+    **Summary:**
+هل يمكن كتابة مؤخر صداق بقيمة كبيرة؟
+      <p>نعم، يمكن الاتفاق على أي قيمة لمؤخر الصداق. الرسوم تتأثر بقيمة المؤخر، لذا يُفضل الاستفسار مسبقًا.</p>
+
+    **Summary:**
+كيف أحجز موعد أو أستفسر؟
+      <p>يمكنك ملء نموذج الحجز أعلاه أو الاتصال مباشرة على الرقم: <strong style="color:var(--gold)">01222432275</strong></p>
+  </section>
+
+  <!-- ===== أقرب فرع ===== -->
   <section class="section" id="nearest">
     <div class="section-title">
       <h2>أقرب فرع لك</h2>
@@ -519,6 +898,7 @@
     </div>
   </section>
 
+  <!-- ===== دليل ومقالات ===== -->
   <section class="section" id="links">
     <div class="section-title">
       <h2>دليل ومقالات</h2>
@@ -558,6 +938,36 @@
       document.getElementById('mobileMenu').classList.toggle('open');
     }
 
+    // إرسال النموذج إلى واتساب
+    function sendToWhatsApp(e) {
+      e.preventDefault();
+
+      const name = document.getElementById('name').value.trim();
+      const phone = document.getElementById('phone').value.trim();
+      const service = document.getElementById('service').value;
+      const date = document.getElementById('date').value;
+      const notes = document.getElementById('notes').value.trim();
+
+      let message = `السلام عليكم ورحمة الله وبركاته%0A%0A`;
+      message += `*طلب حجز موعد*%0A%0A`;
+      message += `👤 الاسم: ${name}%0A`;
+      message += `📱 رقم الهاتف: ${phone}%0A`;
+      message += `📋 نوع الخدمة: ${service}%0A`;
+
+      if (date) {
+        message += `📅 التاريخ المقترح: ${date}%0A`;
+      }
+      if (notes) {
+        message += `📝 ملاحظات: ${notes}%0A`;
+      }
+
+      message += `%0Aأرجو التواصل معي في أقرب وقت.`;
+
+      const whatsappURL = `https://wa.me/201222432275?text=${message}`;
+      window.open(whatsappURL, '_blank');
+    }
+
+    // أقرب فرع
     const branches = [
       { name: "المقر الرئيسي", addr: "ش العشرين، فيصل، الجيزة", lat: 29.9750, lon: 31.2000 },
       { name: "فرع إمبابة", addr: "مصطفى سلام، محكمة السودان، 27، ترعة السواحل، إمبابة، الجيزة", lat: 30.0771, lon: 31.2080 },
