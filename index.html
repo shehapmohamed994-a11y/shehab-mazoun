@@ -1,216 +1,658 @@
 <!DOCTYPE html>
 <html lang="ar" dir="rtl">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>مكتب الشيخ محمد المأذون الشرعي</title>
-<meta name="description" content="مكتب الشيخ محمد المأذون الشرعي - خدمات شرعية وتوثيق زواج وطلاق - فروع في القاهرة والجيزة والقليوبية والإسكندرية">
-<style>
-  * { margin:0; padding:0; box-sizing:border-box; }
-  body {
-    font-family:'Tahoma','Segoe UI',sans-serif;
-    background:#0d0d0d;
-    color:#f2f2f2;
-    line-height:1.7;
-  }
-  header {
-    background:#000;
-    border-bottom:2px solid #d4af37;
-    padding:35px 20px;
-    text-align:center;
-  }
-  header h1 { color:#d4af37; font-size:1.9rem; margin-bottom:8px; }
-  header p { color:#ccc; font-size:1rem; }
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>مكتب الشيخ محمد المأذون الشرعي</title>
+  <meta name="description" content="مكتب الشيخ محمد المأذون الشرعي - خدمات شرعية وتوثيق الزواج والطلاق - فروع في القاهرة والجيزة والقليوبية والإسكندرية">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700;800&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --gold: #c9a227;
+      --gold-light: #e0c35a;
+      --dark: #0f0f0f;
+      --dark-2: #1a1a1a;
+      --dark-3: #252525;
+      --text: #f5f5f5;
+      --text-muted: #b0b0b0;
+      --whatsapp: #25D366;
+    }
 
-  .container { max-width:800px; margin:0 auto; padding:30px 15px; }
+    * { margin: 0; padding: 0; box-sizing: border-box; }
 
-  #nearest-box {
-    background:#1a1a1a;
-    border:1px solid #333;
-    border-right:5px solid #d4af37;
-    border-radius:10px;
-    padding:22px;
-    margin-bottom:35px;
-    text-align:center;
-  }
-  #nearest-box h2 { color:#d4af37; font-size:1.2rem; margin-bottom:12px; }
-  #nearest-box .branch-name { color:#fff; font-weight:bold; font-size:1.15rem; margin-bottom:6px; }
-  #nearest-box .branch-addr { color:#ccc; font-size:0.95rem; margin-bottom:14px; }
-  #nearest-box .loading { color:#aaa; font-size:0.95rem; }
-  .btn {
-    display:inline-block;
-    background:#d4af37;
-    color:#000;
-    font-weight:bold;
-    padding:10px 22px;
-    border-radius:8px;
-    text-decoration:none;
-    font-size:0.95rem;
-    margin-top:6px;
-  }
-  .contact-row {
-    display:flex;
-    gap:10px;
-    justify-content:center;
-    margin-top:12px;
-    flex-wrap:wrap;
-  }
-  .btn-call, .btn-whatsapp {
-    display:inline-block;
-    padding:10px 20px;
-    border-radius:8px;
-    text-decoration:none;
-    font-size:0.9rem;
-    font-weight:bold;
-  }
-  .btn-call { background:#2a2a2a; color:#fff; border:1px solid #d4af37; }
-  .btn-whatsapp { background:#25D366; color:#000; }
-  .btn-outline {
-    display:inline-block;
-    border:1px solid #d4af37;
-    color:#d4af37;
-    padding:8px 18px;
-    border-radius:8px;
-    text-decoration:none;
-    font-size:0.9rem;
-    margin-top:10px;
-  }
+    body {
+      font-family: 'Cairo', 'Tahoma', sans-serif;
+      background: var(--dark);
+      color: var(--text);
+      line-height: 1.8;
+      overflow-x: hidden;
+    }
 
-  .section-title {
-    color:#d4af37;
-    border-bottom:1px solid #333;
-    padding-bottom:8px;
-    margin-bottom:15px;
-    font-size:1.15rem;
-  }
-  a.page-link {
-    display:block;
-    background:#1a1a1a;
-    border:1px solid #333;
-    border-right:4px solid #d4af37;
-    border-radius:8px;
-    padding:16px 20px;
-    margin-bottom:12px;
-    color:#fff;
-    text-decoration:none;
-    font-size:1.02rem;
-    transition:0.2s;
-  }
-  a.page-link:hover { background:#232323; border-right-color:#fff; }
+    /* ========== NAV ========== */
+    .nav {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      z-index: 1000;
+      background: rgba(15, 15, 15, 0.92);
+      backdrop-filter: blur(12px);
+      border-bottom: 1px solid rgba(201, 162, 39, 0.25);
+      padding: 14px 20px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
 
-  footer { text-align:center; padding:25px; color:#888; font-size:0.85rem; border-top:1px solid #222; margin-top:20px; }
-</style>
+    .nav-logo {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      text-decoration: none;
+      color: var(--gold);
+      font-weight: 700;
+      font-size: 1.05rem;
+    }
+
+    .nav-logo svg {
+      width: 36px;
+      height: 36px;
+    }
+
+    .nav-links {
+      display: none;
+      gap: 22px;
+      list-style: none;
+    }
+
+    .nav-links a {
+      color: var(--text-muted);
+      text-decoration: none;
+      font-size: 0.95rem;
+      font-weight: 600;
+      transition: color 0.2s;
+    }
+
+    .nav-links a:hover,
+    .nav-links a.active {
+      color: var(--gold);
+    }
+
+    .menu-btn {
+      background: none;
+      border: none;
+      color: var(--gold);
+      font-size: 1.6rem;
+      cursor: pointer;
+      padding: 4px 8px;
+    }
+
+    /* ========== HERO ========== */
+    .hero {
+      position: relative;
+      min-height: 100vh;
+      min-height: 100dvh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      padding: 100px 20px 60px;
+      background:
+        linear-gradient(180deg, rgba(15,15,15,0.75) 0%, rgba(15,15,15,0.85) 100%),
+        url('https://images.unsplash.com/photo-1581578731548-c64695cc6952?q=80&w=1600&auto=format&fit=crop') center/cover no-repeat;
+    }
+
+    .hero::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: radial-gradient(ellipse at center, transparent 30%, rgba(0,0,0,0.5) 100%);
+      pointer-events: none;
+    }
+
+    .hero-content {
+      position: relative;
+      z-index: 2;
+      max-width: 720px;
+    }
+
+    .hero h1 {
+      font-size: clamp(1.9rem, 5.5vw, 2.9rem);
+      font-weight: 800;
+      color: #fff;
+      margin-bottom: 12px;
+      line-height: 1.3;
+      text-shadow: 0 2px 20px rgba(0,0,0,0.5);
+    }
+
+    .hero-line {
+      width: 80px;
+      height: 3px;
+      background: var(--gold);
+      margin: 0 auto 22px;
+      border-radius: 2px;
+    }
+
+    .hero p {
+      font-size: clamp(0.95rem, 2.5vw, 1.15rem);
+      color: #e8e8e8;
+      margin-bottom: 32px;
+      line-height: 1.9;
+      max-width: 580px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    .hero-btns {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 14px;
+      justify-content: center;
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 14px 28px;
+      border-radius: 10px;
+      font-weight: 700;
+      font-size: 1rem;
+      text-decoration: none;
+      transition: all 0.25s ease;
+      border: none;
+      cursor: pointer;
+      font-family: inherit;
+    }
+
+    .btn-gold {
+      background: var(--gold);
+      color: #111;
+    }
+
+    .btn-gold:hover {
+      background: var(--gold-light);
+      transform: translateY(-2px);
+      box-shadow: 0 8px 25px rgba(201, 162, 39, 0.35);
+    }
+
+    .btn-outline {
+      background: transparent;
+      color: #fff;
+      border: 2px solid rgba(255,255,255,0.5);
+    }
+
+    .btn-outline:hover {
+      border-color: var(--gold);
+      color: var(--gold);
+      background: rgba(201, 162, 39, 0.08);
+    }
+
+    /* ========== SECTIONS ========== */
+    .section {
+      padding: 60px 20px;
+      max-width: 900px;
+      margin: 0 auto;
+    }
+
+    .section-title {
+      text-align: center;
+      margin-bottom: 35px;
+    }
+
+    .section-title h2 {
+      font-size: 1.6rem;
+      font-weight: 800;
+      color: var(--gold);
+      margin-bottom: 8px;
+    }
+
+    .section-title p {
+      color: var(--text-muted);
+      font-size: 0.95rem;
+    }
+
+    /* Nearest branch */
+    #nearest-box {
+      background: var(--dark-2);
+      border: 1px solid #333;
+      border-right: 5px solid var(--gold);
+      border-radius: 14px;
+      padding: 28px 22px;
+      text-align: center;
+      margin-bottom: 10px;
+    }
+
+    #nearest-box h3 {
+      color: var(--gold);
+      font-size: 1.2rem;
+      margin-bottom: 14px;
+    }
+
+    .branch-name {
+      color: #fff;
+      font-weight: 700;
+      font-size: 1.2rem;
+      margin-bottom: 6px;
+    }
+
+    .branch-addr {
+      color: var(--text-muted);
+      font-size: 0.95rem;
+      margin-bottom: 16px;
+    }
+
+    .loading {
+      color: #999;
+    }
+
+    .contact-row {
+      display: flex;
+      gap: 12px;
+      justify-content: center;
+      flex-wrap: wrap;
+      margin-top: 14px;
+    }
+
+    .btn-sm {
+      padding: 11px 20px;
+      font-size: 0.92rem;
+      border-radius: 8px;
+    }
+
+    .btn-call {
+      background: var(--dark-3);
+      color: #fff;
+      border: 1px solid var(--gold);
+    }
+
+    .btn-call:hover {
+      background: #333;
+    }
+
+    .btn-whatsapp {
+      background: var(--whatsapp);
+      color: #111;
+    }
+
+    .btn-whatsapp:hover {
+      filter: brightness(1.08);
+    }
+
+    /* Links cards */
+    .links-grid {
+      display: grid;
+      gap: 14px;
+    }
+
+    a.page-link {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      background: var(--dark-2);
+      border: 1px solid #333;
+      border-right: 4px solid var(--gold);
+      border-radius: 12px;
+      padding: 18px 20px;
+      color: #fff;
+      text-decoration: none;
+      font-size: 1.05rem;
+      font-weight: 600;
+      transition: all 0.2s;
+    }
+
+    a.page-link:hover {
+      background: var(--dark-3);
+      border-right-color: var(--gold-light);
+      transform: translateX(-4px);
+    }
+
+    a.page-link span.icon {
+      font-size: 1.3rem;
+      flex-shrink: 0;
+    }
+
+    /* Services */
+    .services {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 18px;
+    }
+
+    @media (min-width: 600px) {
+      .services {
+        grid-template-columns: repeat(3, 1fr);
+      }
+    }
+
+    .service-card {
+      background: var(--dark-2);
+      border: 1px solid #333;
+      border-radius: 14px;
+      padding: 26px 20px;
+      text-align: center;
+      transition: border-color 0.2s;
+    }
+
+    .service-card:hover {
+      border-color: var(--gold);
+    }
+
+    .service-card .icon {
+      font-size: 2rem;
+      margin-bottom: 12px;
+    }
+
+    .service-card h3 {
+      color: var(--gold);
+      font-size: 1.1rem;
+      margin-bottom: 8px;
+    }
+
+    .service-card p {
+      color: var(--text-muted);
+      font-size: 0.9rem;
+    }
+
+    /* ========== FLOATING BUTTONS ========== */
+    .float-btns {
+      position: fixed;
+      bottom: 24px;
+      left: 20px;
+      z-index: 999;
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+    }
+
+    .float-btn {
+      width: 56px;
+      height: 56px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-decoration: none;
+      box-shadow: 0 4px 18px rgba(0,0,0,0.4);
+      transition: transform 0.2s;
+      font-size: 1.5rem;
+    }
+
+    .float-btn:hover {
+      transform: scale(1.08);
+    }
+
+    .float-call {
+      background: var(--gold);
+      color: #111;
+    }
+
+    .float-wa {
+      background: var(--whatsapp);
+      color: #fff;
+    }
+
+    /* ========== FOOTER ========== */
+    footer {
+      text-align: center;
+      padding: 30px 20px;
+      color: #777;
+      font-size: 0.85rem;
+      border-top: 1px solid #222;
+      margin-top: 20px;
+    }
+
+    footer a {
+      color: var(--gold);
+      text-decoration: none;
+    }
+
+    /* ========== MOBILE MENU ========== */
+    .mobile-menu {
+      display: none;
+      position: fixed;
+      top: 60px;
+      left: 0;
+      right: 0;
+      background: rgba(15,15,15,0.98);
+      border-bottom: 1px solid #333;
+      padding: 20px;
+      z-index: 999;
+      flex-direction: column;
+      gap: 16px;
+    }
+
+    .mobile-menu.open {
+      display: flex;
+    }
+
+    .mobile-menu a {
+      color: var(--text);
+      text-decoration: none;
+      font-weight: 600;
+      font-size: 1.05rem;
+      padding: 10px 0;
+      border-bottom: 1px solid #222;
+    }
+
+    .mobile-menu a:hover {
+      color: var(--gold);
+    }
+
+    @media (min-width: 768px) {
+      .nav-links { display: flex; }
+      .menu-btn { display: none; }
+    }
+  </style>
 </head>
 <body>
 
-<header>
-  <h1>مكتب الشيخ محمد المأذون الشرعي</h1>
-  <p>مأذون شرعي | خدمات شرعية وتوثيق الزواج والطلاق</p>
-</header>
+  <!-- NAV -->
+  <nav class="nav">
+    <a href="#" class="nav-logo">
+      <svg viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <rect width="48" height="48" rx="10" fill="#c9a227"/>
+        <path d="M14 32V16h6.5c3.2 0 5.2 1.6 5.2 4.2 0 1.7-.9 3-2.4 3.6L28 32h-4.2l-3.8-7.2H18V32H14zm4-10.5h2.2c1.3 0 2.1-.6 2.1-1.7s-.8-1.6-2.1-1.6H18v3.3z" fill="#111"/>
+      </svg>
+      الشيخ محمد
+    </a>
+    <ul class="nav-links">
+      <li><a href="#" class="active">الرئيسية</a></li>
+      <li><a href="#services">الخدمات</a></li>
+      <li><a href="#nearest">أقرب فرع</a></li>
+      <li><a href="#links">المزيد</a></li>
+    </ul>
+    <button class="menu-btn" onclick="toggleMenu()" aria-label="القائمة">☰</button>
+  </nav>
 
-<div class="container">
-
-  <div id="nearest-box">
-    <h2>أقرب فرع لك</h2>
-    <div id="nearest-result">
-      <p class="loading">جاري تحديد موقعك...</p>
-    </div>
+  <div class="mobile-menu" id="mobileMenu">
+    <a href="#" onclick="toggleMenu()">الرئيسية</a>
+    <a href="#services" onclick="toggleMenu()">الخدمات</a>
+    <a href="#nearest" onclick="toggleMenu()">أقرب فرع</a>
+    <a href="#links" onclick="toggleMenu()">المزيد</a>
   </div>
 
-  <div class="section-title">دليل الأحوال الشخصية</div>
-  <a class="page-link" href="دليل-الأحوال-الشخصية-شهاب.html">الدليل الشامل لأحكام الأحوال الشخصية الشرعية</a>
-  <a class="page-link" href="أحوال-شخصية-شهاب.html">دليل أحكام الأحوال الشخصية الشرعية</a>
-
-  <div class="section-title" style="margin-top:30px;">الفتاوى الشرعية</div>
-  <a class="page-link" href="الفتاوى-الشرعية-للزواج-والطلاق.html">الفتاوى الشرعية للزواج والطلاق</a>
-
-  <div class="section-title" style="margin-top:30px;">المقالات</div>
-  <a class="page-link" href="articles.html">مقالات المكتب</a>
-
-</div>
-
-<footer>
-  © مكتب الشيخ محمد المأذون الشرعي — جميع الحقوق محفوظة
-</footer>
-
-<script>
-const branches = [
-  { name: "المقر الرئيسي", addr: "ش العشرين، فيصل، الجيزة", lat: 29.9750, lon: 31.2000 },
-  { name: "فرع إمبابة", addr: "مصطفى سلام، محكمة السودان، 27، ترعة السواحل، إمبابة، الجيزة", lat: 30.0771, lon: 31.2080 },
-  { name: "فرع القاهرة الجديدة", addr: "414 عمارات النرجس، محور جمال عبد الناصر، القاهرة الجديدة", lat: 30.0286, lon: 31.4959 },
-  { name: "فرع المعادي", addr: "21 عمارات الشرطة، ش 233، الشقة 41، الدور 4، المعادي", lat: 29.9603, lon: 31.2597 },
-  { name: "فرع المقطم", addr: "15 ش 9، الدور 1، المقطم", lat: 29.9870, lon: 31.2990 },
-  { name: "فرع الوايلي", addr: "ش أحمد سعيد، متفرع من ش رمسيس، الوايلي", lat: 30.0596, lon: 31.2600 },
-  { name: "فرع بولاق", addr: "3 ش قطب الدين مرسي، متفرع من محور 26 يوليو، بولاق", lat: 30.0596, lon: 31.2380 },
-  { name: "فرع حدائق القبة", addr: "20 عمارات الشركة السعودية، ش السواح، حدائق القبة", lat: 30.1030, lon: 31.2870 },
-  { name: "فرع مدينة الشروق", addr: "طريق الشباب، داخل ذا جيت مول، الدور الثاني، مدينة الشروق", lat: 30.1949, lon: 31.6119 },
-  { name: "فرع مصر الجديدة", addr: "13 ش الخليفة المأمون، مصر الجديدة", lat: 30.0875, lon: 31.3244 },
-  { name: "فرع الأميرية", addr: "25 ش الكابلات، خلف محكمة الأميرية، الأميرية", lat: 30.1010, lon: 31.2890 },
-  { name: "فرع البساتين", addr: "56 الشارع الجديد، البساتين", lat: 29.9500, lon: 31.2800 },
-  { name: "فرع الخليفة", addr: "طريق النصر، الأباجية، الخليفة، القاهرة", lat: 30.0170, lon: 31.2650 },
-  { name: "فرع الشروق - شرق مدينة نصر", addr: "شرق مدينة نصر، الشروق، القاهرة", lat: 30.1250, lon: 31.3850 },
-  { name: "فرع المطرية", addr: "عبد العاطي معاش، العزب، قسم المطرية، القاهرة", lat: 30.1290, lon: 31.3230 },
-  { name: "فرع شبرا الخيمة", addr: "20 ش محمد أبو الهنا، شبرا الخيمة", lat: 30.1286, lon: 31.2422 },
-  { name: "فرع الخصوص", addr: "19 المدينة المنورة، الخصوص، قسم الخصوص، القليوبية", lat: 30.1500, lon: 31.3080 },
-  { name: "فرع العبور", addr: "الحي الأول، العبور، القليوبية", lat: 30.1970, lon: 31.4720 },
-  { name: "فرع أبو قير", addr: "ش طوسون، أعلى فودافون، أبو قير، الإسكندرية", lat: 31.3167, lon: 30.0667 },
-  { name: "فرع العطارين", addr: "12 ش مسجد العطارين، أمام مطعم ملك السمان، العطارين، الإسكندرية", lat: 31.1970, lon: 29.8990 },
-  { name: "فرع المنشية", addr: "96 ش الجزائر، المنشية، الإسكندرية", lat: 31.1980, lon: 29.8950 },
-  { name: "فرع سيدي بشر", addr: "ش 62، بجوار صيدلية د. سالم، سيدي بشر قبلي، الإسكندرية", lat: 31.2650, lon: 29.9800 },
-  { name: "فرع سموحة", addr: "16 ميدان سموحة، سيدي جابر، الإسكندرية", lat: 31.2160, lon: 29.9430 },
-  { name: "فرع محرم بك", addr: "21 ش الرصافة، محرم بك، الإسكندرية", lat: 31.1890, lon: 29.9130 }
-];
-
-function haversine(lat1, lon1, lat2, lon2) {
-  const R = 6371;
-  const dLat = (lat2 - lat1) * Math.PI / 180;
-  const dLon = (lon2 - lon1) * Math.PI / 180;
-  const a = Math.sin(dLat/2) * Math.sin(dLat/2) +
-            Math.cos(lat1 * Math.PI / 180) * Math.cos(lat2 * Math.PI / 180) *
-            Math.sin(dLon/2) * Math.sin(dLon/2);
-  const c = 2 * Math.atan2(Math.sqrt(a), Math.sqrt(1 - a));
-  return R * c;
-}
-
-function showNearest(userLat, userLon) {
-  let nearest = branches[0];
-  let minDist = Infinity;
-  branches.forEach(b => {
-    const d = haversine(userLat, userLon, b.lat, b.lon);
-    if (d < minDist) { minDist = d; nearest = b; }
-  });
-  document.getElementById("nearest-result").innerHTML = `
-    <div class="branch-name">${nearest.name}</div>
-    <div class="branch-addr">${nearest.addr}</div>
-    <a class="btn" href="https://www.google.com/maps/search/?api=1&query=${nearest.lat},${nearest.lon}" target="_blank">افتح الموقع على الخريطة</a>
-    <div class="contact-row">
-      <a class="btn-call" href="tel:01222432275">📞 اتصال</a>
-      <a class="btn-whatsapp" href="https://wa.me/201222432275" target="_blank">💬 واتساب</a>
+  <!-- HERO -->
+  <section class="hero">
+    <div class="hero-content">
+      <h1>مكتب الشيخ محمد<br>المأذون الشرعي</h1>
+      <div class="hero-line"></div>
+      <p>
+        نقدم خدمات شرعية وقانونية متكاملة لتوثيق عقود الزواج وإشهادات الطلاق والصداق
+        وفقاً لأحكام الشريعة. فروع متعددة في القاهرة والجيزة والقليوبية والإسكندرية.
+      </p>
+      <div class="hero-btns">
+        <a class="btn btn-gold" href="tel:01222432275">
+          📞 اتصال الآن
+        </a>
+        <a class="btn btn-outline" href="https://wa.me/201222432275" target="_blank" rel="noopener">
+          💬 واتساب
+        </a>
+      </div>
     </div>
-  `;
-}
+  </section>
 
-function showFallback() {
-  document.getElementById("nearest-result").innerHTML = `
-    <p style="color:#ccc; margin-bottom:10px;">من فضلك فعّل خدمة تحديد الموقع من المتصفح عشان نوريك أقرب فرع ليك.</p>
-    <a class="btn-outline" onclick="location.reload()">إعادة المحاولة</a>
-    <div class="contact-row">
-      <a class="btn-call" href="tel:01222432275">📞 اتصال</a>
-      <a class="btn-whatsapp" href="https://wa.me/201222432275" target="_blank">💬 واتساب</a>
+  <!-- SERVICES -->
+  <section class="section" id="services">
+    <div class="section-title">
+      <h2>خدماتنا</h2>
+      <p>توثيق شرعي ورسمي بكل دقة واحترافية</p>
     </div>
-  `;
-}
+    <div class="services">
+      <div class="service-card">
+        <div class="icon">📜</div>
+        <h3>عقود الزواج</h3>
+        <p>توثيق قانوني وشرعي دقيق مع الالتزام بكافة إجراءات عقد القران</p>
+      </div>
+      <div class="service-card">
+        <div class="icon">⚖️</div>
+        <h3>الطلاق والرجعة</h3>
+        <p>توثيق حالات الطلاق حضوري وغيابي وتراضي وإثبات الرجعة</p>
+      </div>
+      <div class="service-card">
+        <div class="icon">💬</div>
+        <h3>استشارات شرعية</h3>
+        <p>الإجابة على التساؤلات المتعلقة بالحقوق والمهر وحقوق الأبناء</p>
+      </div>
+    </div>
+  </section>
 
-if (navigator.geolocation) {
-  navigator.geolocation.getCurrentPosition(
-    pos => showNearest(pos.coords.latitude, pos.coords.longitude),
-    err => showFallback(),
-    { timeout: 8000 }
-  );
-} else {
-  showFallback();
-}
-</script>
+  <!-- NEAREST BRANCH -->
+  <section class="section" id="nearest">
+    <div class="section-title">
+      <h2>أقرب فرع لك</h2>
+      <p>نحدد أقرب مكتب حسب موقعك الحالي</p>
+    </div>
+    <div id="nearest-box">
+      <h3>جاري تحديد موقعك...</h3>
+      <div id="nearest-result">
+        <p class="loading">من فضلك فعّل خدمة الموقع من المتصفح</p>
+      </div>
+    </div>
+  </section>
 
+  <!-- LINKS -->
+  <section class="section" id="links">
+    <div class="section-title">
+      <h2>دليل ومقالات</h2>
+      <p>مصادر شرعية مفيدة</p>
+    </div>
+    <div class="links-grid">
+      <a class="page-link" href="دليل-الأحوال-الشخصية-شهاب.html">
+        <span class="icon">📖</span>
+        الدليل الشامل لأحكام الأحوال الشخصية الشرعية
+      </a>
+      <a class="page-link" href="أحوال-شخصية-شهاب.html">
+        <span class="icon">📋</span>
+        دليل أحكام الأحوال الشخصية الشرعية
+      </a>
+      <a class="page-link" href="الفتاوى-الشرعية-للزواج-والطلاق.html">
+        <span class="icon">🕌</span>
+        الفتاوى الشرعية للزواج والطلاق
+      </a>
+      <a class="page-link" href="articles.html">
+        <span class="icon">✍️</span>
+        مقالات المكتب
+      </a>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer>
+    © مكتب الشيخ محمد المأذون الشرعي — جميع الحقوق محفوظة
+  </footer>
+
+  <!-- FLOATING BUTTONS -->
+  <div class="float-btns">
+    <a class="float-btn float-call" href="tel:01222432275" title="اتصال">📞</a>
+    <a class="float-btn float-wa" href="https://wa.me/201222432275" target="_blank" rel="noopener" title="واتساب">💬</a>
+  </div>
+
+  <script>
+    function toggleMenu() {
+      document.getElementById('mobileMenu').classList.toggle('open');
+    }
+
+    const branches = [
+      { name: "المقر الرئيسي", addr: "ش العشرين، فيصل، الجيزة", lat: 29.9750, lon: 31.2000 },
+      { name: "فرع إمبابة", addr: "مصطفى سلام، محكمة السودان، 27، ترعة السواحل، إمبابة، الجيزة", lat: 30.0771, lon: 31.2080 },
+      { name: "فرع القاهرة الجديدة", addr: "414 عمارات النرجس، محور جمال عبد الناصر، القاهرة الجديدة", lat: 30.0286, lon: 31.4959 },
+      { name: "فرع المعادي", addr: "21 عمارات الشرطة، ش 233، الشقة 41، الدور 4، المعادي", lat: 29.9603, lon: 31.2597 },
+      { name: "فرع المقطم", addr: "15 ش 9، الدور 1، المقطم", lat: 29.9870, lon: 31.2990 },
+      { name: "فرع الوايلي", addr: "ش أحمد سعيد، متفرع من ش رمسيس، الوايلي", lat: 30.0596, lon: 31.2600 },
+      { name: "فرع بولاق", addr: "3 ش قطب الدين مرسي، متفرع من محور 26 يوليو، بولاق", lat: 30.0596, lon: 31.2380 },
+      { name: "فرع حدائق القبة", addr: "20 عمارات الشركة السعودية، ش السواح، حدائق القبة", lat: 30.1030, lon: 31.2870 },
+      { name: "فرع مدينة الشروق", addr: "طريق الشباب، داخل ذا جيت مول، الدور الثاني، مدينة الشروق", lat: 30.1949, lon: 31.6119 },
+      { name: "فرع مصر الجديدة", addr: "13 ش الخليفة المأمون، مصر الجديدة", lat: 30.0875, lon: 31.3244 },
+      { name: "فرع الأميرية", addr: "25 ش الكابلات، خلف محكمة الأميرية، الأميرية", lat: 30.1010, lon: 31.2890 },
+      { name: "فرع البساتين", addr: "56 الشارع الجديد، البساتين", lat: 29.9500, lon: 31.2800 },
+      { name: "فرع الخليفة", addr: "طريق النصر، الأباجية، الخليفة، القاهرة", lat: 30.0170, lon: 31.2650 },
+      { name: "فرع الشروق - شرق مدينة نصر", addr: "شرق مدينة نصر، الشروق، القاهرة", lat: 30.1250, lon: 31.3850 },
+      { name: "فرع المطرية", addr: "عبد العاطي معاش، العزب، قسم المطرية، القاهرة", lat: 30.1290, lon: 31.3230 },
+      { name: "فرع شبرا الخيمة", addr: "20 ش محمد أبو الهنا، شبرا الخيمة", lat: 30.1286, lon: 31.2422 },
+      { name: "فرع الخصوص", addr: "19 المدينة المنورة، الخصوص، قسم الخصوص، القليوبية", lat: 30.1500, lon: 31.3080 },
+      { name: "فرع العبور", addr: "الحي الأول، العبور، القليوبية", lat: 30.1970, lon: 31.4720 },
+      { name: "فرع أبو قير", addr: "ش طوسون، أعلى فودافون، أبو قير، الإسكندرية", lat: 31.3167, lon: 30.0667 },
+      { name: "فرع العطارين", addr: "12 ش مسجد العطارين، أمام مطعم ملك السمان، العطارين، الإسكندرية", lat: 31.1970, lon: 29.8990 },
+      { name: "فرع المنشية", addr: "96 ش الجزائر، المنشية، الإسكندرية", lat: 31.1980, lon: 29.8950 },
+      { name: "فرع سيدي بشر", addr: "ش 62، بجوار صيدلية د. سالم، سيدي بشر قبلي، الإسكندرية", lat: 31.2650, lon: 29.9800 },
+      { name: "فرع سموحة", addr: "16 ميدان سموحة، سيدي جابر، الإسكندرية", lat: 31.2160, lon: 29.9430 },
+      { name: "فرع محرم بك", addr: "21 ش الرصافة، محرم بك، الإسكندرية", lat: 31.1890, lon: 29.9130 }
+    ];
+
+    function haversine(lat1, lon1, lat2, lon2) {
+      const R = 6371;
+      const dLat = (lat2 - lat1) * Math.PI / 180;
+      const dLon = (lon2 - lon1) * Math.PI / 180;
+      const a = Math.sin(dLat/2) * Math.sin(dLat/2) +
+                Math.cos(lat1 * Math.PI / 180) * Math.cos(lat2 * Math.PI / 180) *
+                Math.sin(dLon/2) * Math.sin(dLon/2);
+      const c = 2 * Math.atan2(Math.sqrt(a), Math.sqrt(1 - a));
+      return R * c;
+    }
+
+    function showNearest(userLat, userLon) {
+      let nearest = branches[0];
+      let minDist = Infinity;
+      branches.forEach(b => {
+        const d = haversine(userLat, userLon, b.lat, b.lon);
+        if (d < minDist) { minDist = d; nearest = b; }
+      });
+      document.getElementById("nearest-result").innerHTML = `
+        <div class="branch-name">${nearest.name}</div>
+        <div class="branch-addr">${nearest.addr}</div>
+        <a class="btn btn-gold btn-sm" href="https://www.google.com/maps/search/?api=1&query=\( {nearest.lat}, \){nearest.lon}" target="_blank" rel="noopener">افتح على الخريطة</a>
+        <div class="contact-row">
+          <a class="btn btn-call btn-sm" href="tel:01222432275">📞 اتصال</a>
+          <a class="btn btn-whatsapp btn-sm" href="https://wa.me/201222432275" target="_blank" rel="noopener">💬 واتساب</a>
+        </div>
+      `;
+      document.querySelector('#nearest-box h3').textContent = 'أقرب فرع ليك';
+    }
+
+    function showFallback() {
+      document.getElementById("nearest-result").innerHTML = `
+        <p style="color:#aaa; margin-bottom:12px;">من فضلك فعّل خدمة تحديد الموقع من المتصفح عشان نوريك أقرب فرع ليك.</p>
+        <a class="btn btn-outline btn-sm" onclick="location.reload()" style="border-color:var(--gold);color:var(--gold);">إعادة المحاولة</a>
+        <div class="contact-row">
+          <a class="btn btn-call btn-sm" href="tel:01222432275">📞 اتصال</a>
+          <a class="btn btn-whatsapp btn-sm" href="https://wa.me/201222432275" target="_blank" rel="noopener">💬 واتساب</a>
+        </div>
+      `;
+      document.querySelector('#nearest-box h3').textContent = 'تحديد الموقع';
+    }
+
+    if (navigator.geolocation) {
+      navigator.geolocation.getCurrentPosition(
+        pos => showNearest(pos.coords.latitude, pos.coords.longitude),
+        err => showFallback(),
+        { timeout: 8000 }
+      );
+    } else {
+      showFallback();
+    }
+  </script>
 </body>
 </html>
