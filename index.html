@@ -617,9 +617,9 @@
     <ul class="nav-links">
       <li><a href="#" class="active">الرئيسية</a></li>
       <li><a href="#services">الخدمات</a></li>
+      <li><a href="#nearest">أقرب فرع</a></li>
       <li><a href="#docs">الأوراق المطلوبة</a></li>
       <li><a href="#booking">حجز موعد</a></li>
-      <li><a href="#nearest">أقرب فرع</a></li>
       <li><a href="#links">المزيد</a></li>
     </ul>
     <button class="menu-btn" onclick="toggleMenu()" aria-label="القائمة">☰</button>
@@ -628,9 +628,9 @@
   <div class="mobile-menu" id="mobileMenu">
     <a href="#" onclick="toggleMenu()">الرئيسية</a>
     <a href="#services" onclick="toggleMenu()">الخدمات</a>
+    <a href="#nearest" onclick="toggleMenu()">أقرب فرع</a>
     <a href="#docs" onclick="toggleMenu()">الأوراق المطلوبة</a>
     <a href="#booking" onclick="toggleMenu()">حجز موعد</a>
-    <a href="#nearest" onclick="toggleMenu()">أقرب فرع</a>
     <a href="#links" onclick="toggleMenu()">المزيد</a>
   </div>
 
@@ -670,6 +670,20 @@
         <div class="icon">💬</div>
         <h3>استشارات شرعية</h3>
         <p>الإجابة على التساؤلات المتعلقة بالحقوق والمهر وحقوق الأبناء</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== أقرب فرع (يظهر فور فتح الصفحة) ===== -->
+  <section class="section" id="nearest">
+    <div class="section-title">
+      <h2>أقرب فرع ليك</h2>
+      <p>نحدد أقرب مكتب حسب موقعك الحالي تلقائيًا</p>
+    </div>
+    <div id="nearest-box">
+      <h3>جاري تحديد موقعك...</h3>
+      <div id="nearest-result">
+        <p class="loading">من فضلك فعّل خدمة الموقع من المتصفح</p>
       </div>
     </div>
   </section>
@@ -733,6 +747,9 @@
         <label>رقم الهاتف</label>
         <input type="tel" id="phone" name="phone" required placeholder="01xxxxxxxxx">
 
+        <label>عنوان الزوجة (حسب البطاقة)</label>
+        <input type="text" id="address" name="address" required placeholder="العنوان المسجل في بطاقة الرقم القومي">
+
         <label>نوع الخدمة</label>
         <select id="service" name="service" required>
           <option value="">اختر الخدمة</option>
@@ -742,6 +759,12 @@
           <option value="استشارة">استشارة</option>
           <option value="أخرى">أخرى</option>
         </select>
+
+        <label>قيمة المؤخر</label>
+        <input type="text" id="mahr" name="mahr" placeholder="مثال: 50000 جنيه أو حسب الاتفاق">
+
+        <label>مكان كتب الكتاب</label>
+        <input type="text" id="location" name="location" placeholder="مثال: قاعة ... أو المنزل في ...">
 
         <label>التاريخ المقترح</label>
         <input type="date" id="date" name="date">
@@ -884,20 +907,6 @@
       <p>يمكنك ملء نموذج الحجز أعلاه أو الاتصال مباشرة على الرقم: <strong style="color:var(--gold)">01222432275</strong></p>
   </section>
 
-  <!-- ===== أقرب فرع ===== -->
-  <section class="section" id="nearest">
-    <div class="section-title">
-      <h2>أقرب فرع لك</h2>
-      <p>نحدد أقرب مكتب حسب موقعك الحالي</p>
-    </div>
-    <div id="nearest-box">
-      <h3>جاري تحديد موقعك...</h3>
-      <div id="nearest-result">
-        <p class="loading">من فضلك فعّل خدمة الموقع من المتصفح</p>
-      </div>
-    </div>
-  </section>
-
   <!-- ===== دليل ومقالات ===== -->
   <section class="section" id="links">
     <div class="section-title">
@@ -944,7 +953,10 @@
 
       const name = document.getElementById('name').value.trim();
       const phone = document.getElementById('phone').value.trim();
+      const address = document.getElementById('address').value.trim();
       const service = document.getElementById('service').value;
+      const mahr = document.getElementById('mahr').value.trim();
+      const location = document.getElementById('location').value.trim();
       const date = document.getElementById('date').value;
       const notes = document.getElementById('notes').value.trim();
 
@@ -952,8 +964,15 @@
       message += `*طلب حجز موعد*%0A%0A`;
       message += `👤 الاسم: ${name}%0A`;
       message += `📱 رقم الهاتف: ${phone}%0A`;
+      message += `🏠 عنوان الزوجة: ${address}%0A`;
       message += `📋 نوع الخدمة: ${service}%0A`;
 
+      if (mahr) {
+        message += `💰 قيمة المؤخر: ${mahr}%0A`;
+      }
+      if (location) {
+        message += `📍 مكان كتب الكتاب: ${location}%0A`;
+      }
       if (date) {
         message += `📅 التاريخ المقترح: ${date}%0A`;
       }
@@ -967,7 +986,7 @@
       window.open(whatsappURL, '_blank');
     }
 
-    // أقرب فرع
+    // أقرب فرع - يعمل فور فتح الصفحة
     const branches = [
       { name: "المقر الرئيسي", addr: "ش العشرين، فيصل، الجيزة", lat: 29.9750, lon: 31.2000 },
       { name: "فرع إمبابة", addr: "مصطفى سلام، محكمة السودان، 27، ترعة السواحل، إمبابة، الجيزة", lat: 30.0771, lon: 31.2080 },
@@ -1037,11 +1056,12 @@
       document.querySelector('#nearest-box h3').textContent = 'تحديد الموقع';
     }
 
+    // يعمل فور تحميل الصفحة
     if (navigator.geolocation) {
       navigator.geolocation.getCurrentPosition(
         pos => showNearest(pos.coords.latitude, pos.coords.longitude),
         err => showFallback(),
-        { timeout: 8000 }
+        { timeout: 8000, enableHighAccuracy: true }
       );
     } else {
       showFallback();
